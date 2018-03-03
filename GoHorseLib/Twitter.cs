@@ -13,7 +13,7 @@ namespace GoHorseLib
         public static string _consumerSecret = "SXmCpmA064MyBsSF6Jrb8io4AAjV6HraYYHpopmz9w1FVdq3Sh"; // Add your Key
         public static string _accessToken = "845015154790223872-oEkmRQMlW3YLObMeGgmPX1JjXoEAN4W"; // Add your Key
         public static string _accessTokenSecret = "E1j98jiZ0sOUwVassZxTUCOSgVcsTtWsBy1H6oJRucxAG"; // Add your Key
-        public List<TwitterStatus> GetWeets(string hashtag, TwitterSearchResultType twitterSearchResultType, int count )
+        public List<TwitterStatus> GetTweets(string hashtag, TwitterSearchResultType twitterSearchResultType, int count )
         {
             TwitterService twitterService = new TwitterService(_consumerKey, _consumerSecret);
             twitterService.AuthenticateWith(_accessToken, _accessTokenSecret);
