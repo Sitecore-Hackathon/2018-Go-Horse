@@ -13,15 +13,15 @@ created: 20180218T213012Z
 ----version----
 language: en
 version: 1
-revision: 88ff0b7e-c260-4308-a3ff-5cedd3970476
+revision: 5d4d5e95-9f2b-4a25-8f02-9dd84ac1ff8e
 
 ----field----
 field: {0E21EE0F-4B3F-4199-9693-37221C5DA967}
 name: Label
 key: label
-content-length: 15
+content-length: 36
 
-Visit Us Today!
+Click Here to Identify as a Tweeter!
 ----field----
 field: {1DFF7A0C-1DC4-41CF-91CC-5082FB8FB80A}
 name: Link
@@ -56,18 +56,25 @@ name: __Revision
 key: __revision
 content-length: 36
 
-88ff0b7e-c260-4308-a3ff-5cedd3970476
+5d4d5e95-9f2b-4a25-8f02-9dd84ac1ff8e
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20180303T153023Z
+20180303T200416Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
 content-length: 14
 
-sitecore\Admin
+sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />
