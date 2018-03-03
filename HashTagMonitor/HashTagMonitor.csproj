@@ -7,8 +7,8 @@
     <ProjectGuid>{137D9EA5-9BBC-48B1-A836-C8A662DE4EFC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GoHorseLib</RootNamespace>
-    <AssemblyName>GoHorseLib</AssemblyName>
+    <RootNamespace>HashTagMonitor</RootNamespace>
+    <AssemblyName>HashTagMonitor</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
