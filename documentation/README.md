@@ -29,20 +29,21 @@ Provide detailed instructions on how to install the module, and include screensh
 
 ## Usage
 
-The user has the ability of changing the #hashtah on the sitecore item /sitecore/system/Modules/HashTagMonitor/Test/SCHackathon
+The user has the ability of changing the #hashtah on the sitecore item /sitecore/system/Modules/HashTagMonitor/Test/SCHackathon.
 
 The image below show the configured HashTag
 /sitecore/system/Modules/HashTagMonitor/Test/SCHackathon
 ![HashTag](images/configurehashtag.png?raw=true "Configure HashTag")
 
-After the HashTag is defined, the user can run the Task Scheduler in order to import all the tweets into the xDB, 
-The image below the scheduler configured to be executed every 5 minutes
+After the HashTag is defined, the user can run the Task Scheduler in order to import all the tweets into the xDB.
+The image below the scheduler configured to be executed every 5 minutes.
+
 ![Task Scheduler](images/taskscheduler.png?raw=true "Task Scheduler")
 
 If you can't wait, Force the importation procedure by Firing the following url
 http://myur/api/sitecore/hash/Process
 
-After you run the Process, go to "Experience Profile" and check the List of Contacts. The image below, shows all the Contacts created after the Task was runned.
+After you run the Process, go to "Experience Profile" and check the List of Contacts. The image below, shows all the Contacts created after the Task was run.
 
 ![Contacts](images/contacts.png?raw=true "Contacts")
 
