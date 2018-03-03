@@ -27,6 +27,8 @@
     <SitecoreWebUrl>http://gohorse.local/</SitecoreWebUrl>
     <SitecoreAccessGuid>c1e42d98-cadb-4433-b1bf-b67750e76c8f</SitecoreAccessGuid>
     <InstallSitecoreConnector>True</InstallSitecoreConnector>
+    <DisableFileDeployment>True</DisableFileDeployment>
+    <LightningDeployMode>False</LightningDeployMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugSymbols>false</DebugSymbols>

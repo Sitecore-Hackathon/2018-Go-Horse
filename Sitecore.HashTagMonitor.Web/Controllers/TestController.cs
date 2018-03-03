@@ -10,6 +10,7 @@ namespace Sitecore.HashTagMonitor.Web.Controllers
 {
     public class TestController : Controller
     {
+        [HttpGet]
         public ActionResult Index()
         {
             using (XConnectClient client = XConnect.Client.Configuration.SitecoreXConnectClientConfiguration.GetClient())
@@ -35,6 +36,7 @@ namespace Sitecore.HashTagMonitor.Web.Controllers
             return null;
         }
 
+        [HttpGet]
         public ActionResult AnalyticsRefresh()
         {
             if (Analytics.Tracker.Current != null)
