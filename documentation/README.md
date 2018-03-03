@@ -5,74 +5,56 @@ Module develop by GO HORSE TEAM , Sitecore Hackathon 2018
 ## Summary
 
 **Category:** xConnect
-
-Purpose :The Module automatically tracks all tweets for a particular #hashtag and identify accounts that interact with it and import them to xDB. This module helps marketers 
-to identify the profile of each user, e.g. if someone twitts on #schackthon, we can match the user to the Geek persona. 
-It will add points to this category.
+Purpose: The Module automatically tracks all tweets for a specified #hashtag and identify accounts that interact with it and import them to xDB. 
+This module helps marketers to identify the profile of each user along with their engagement with the #hashtag, 
+e.g. if someone tweets on #schackthon, visit the website, and fill in a "Visit Us" Form, then we can match the user to a given persona
+and show personalized content.
 
 ## Pre-requisites
-
-Does your module rely on other Sitecore modules or frameworks?
-
-- List any dependencies: 
-- xConnect must be properly installed and configured(Sitecore 9 post build steps)
-- Sitecore PowerShell Extensions-4.7 for Sitecore 8 it not necessary, but may help to start the Sitecore TASK manually and see the results
+- Sitecore 9 Update-1
+- xConnect must be properly installed and configured (Sitecore 9 post build steps)
 
 ## Installation
 
 Provide detailed instructions on how to install the module, and include screenshots where necessary.
 1. Install Sitecore 9
-2. Run Sitecore9 post build installation Steps 
-3. Go to(Control Panel ->  Index Manager Rebuild all indexes )
-4. Go to(Control Panel ->  Database -> Rebuild link Database )
-5. Go to(Control Panel ->  Analytics  -> Deploy Marketing Definitions )
-6. Use the Sitecore Installation wizard to install the Sitecore HashTagMonitor module [package](#link-to-package)
-6. Use the Sitecore Installation wizard to install the Example Web Sitecore [package](#link-to-package)
-7. Install Sitecore PowerShell [OPTIONAL STEP] : This can help you to Force start the TASK without waiting the necessary amout of time
-9. Configure HashTag, the Standard #HashTag is configured as #SCHackathon
-
-## Configuration
-
-How do you configure your module once it is installed? Are there items that need to be updated with settings, or maybe config files need to have keys updated?
-
-Remember you are using Markdown, you can provide code samples too:
-
-```xml
-<?xml version="1.0"?>
-<!--
-  Purpose: Configuration settings for my hackathon module
--->
-<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
-  <sitecore>
-    <settings>
-      <setting name="MyModule.Setting" value="Hackathon" />
-    </settings>
-  </sitecore>
-</configuration>
-```
+2. Use the Sitecore Installation wizard to install the Sitecore HashTagMonitor module [package](#link-to-package)
+3. Use the Sitecore Installation wizard to install the Example Web Sitecore [package](#link-to-package)
+4. Install Sitecore PowerShell [OPTIONAL STEP] : This can help you to Force start the TASK without waiting the necessary amout of time
+5. Publish web 
+6. Configure HashTag on the sitecore item (/sitecore/system/Modules/HashTagMonitor/Test/SCHackathon), the Standard #HashTag is configured as #SCHackathon
+7. Rebuild all indexes (Control Panel ->  Index Manager -> Rebuild all indexes)
+8. Rebuild Link Database (Control Panel ->  Database -> Rebuild link Database)
+9. Deploy Marketing Definitions (Control Panel ->  Analytics  -> Deploy Marketing Definitions)
 
 ## Usage
 
-Provide documentation  about your module, how do the users use your module, where are things located, what do icons mean, are there any secret shortcuts etc.
-
-Please include screenshots where necessary. You can add images to the `./images` folder and then link to them from your documentation:
-
-You can embed images of different formats too:
-The image below, shows all the Contacts created after the Task was runned
-![Contacts](images/contacts.png?raw=true "Contacts")
-
-The image below the scheduler configured to be executed every 5 minutes
-![Task Scheduler](images/taskscheduler.png?raw=true "Task Scheduler")
-
-The image below demonstrates how to Force the Task to be run
-![Task Scheduler](images/powershellforcetask.png?raw=true "Powershell Task")
-
-The image below demonstrates the website
-![Visit Us](images/VisitUs.png?raw=true "Visit Us")
+The user has the ability of changing the #hashtah on the sitecore item /sitecore/system/Modules/HashTagMonitor/Test/SCHackathon.
 
 The image below show the configured HashTag
 /sitecore/system/Modules/HashTagMonitor/Test/SCHackathon
 ![HashTag](images/configurehashtag.png?raw=true "Configure HashTag")
+
+After the HashTag is defined, the user can run the Task Scheduler in order to import all the tweets into the xDB.
+The image below the scheduler configured to be executed every 5 minutes.
+
+![Task Scheduler](images/taskscheduler.png?raw=true "Task Scheduler")
+
+If you can't wait, Force the importation procedure by Firing the following url
+http://myur/api/sitecore/hash/Process
+
+After you run the Process, go to "Experience Profile" and check the List of Contacts. The image below, shows all the Contacts created after the Task was run.
+
+![Contacts](images/contacts.png?raw=true "Contacts")
+
+Acessing the Website:
+User should access the home at e.g. "gohorse.local", click on visit us call to action button, fill the form with his personal data and click on Submit. 
+
+![Visit Us](images/VisitUs.png?raw=true "Visit Us")
+
+He will be redirected to the home page and get a personalized message.
+
+![Thanks for tweeting](images/ThanksForTweeting.jpg?raw=true "Thanks for tweeting")
 
 ## Video
 
