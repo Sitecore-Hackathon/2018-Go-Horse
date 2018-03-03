@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using Sitecore.HashTagMonitor.Api.Managers;
+using Sitecore.HashTagMonitor.Api.Twitter;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Client;
 using Sitecore.XConnect.Collection.Model;
@@ -11,6 +10,21 @@ namespace Sitecore.HashTagMonitor.Web.Controllers
 {
     public class TestController : Controller
     {
+        private readonly HashTagManager _hashTagManager;
+
+        public TestController() : this(new HashTagManager(new Twitter())) { }
+        public TestController(HashTagManager hashTagManager)
+        {
+            _hashTagManager = hashTagManager;
+        }
+
+        [HttpGet]
+        public ActionResult Process()
+        {
+            _hashTagManager.ProcessHashTag("#SCHackathon");
+            return null;
+        }
+
         [HttpGet]
         public ActionResult Index()
         {
