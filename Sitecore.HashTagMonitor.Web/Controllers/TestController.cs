@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Client;
+using Sitecore.XConnect.Collection.Model;
 
 namespace Sitecore.HashTagMonitor.Web.Controllers
 {
@@ -39,13 +40,36 @@ namespace Sitecore.HashTagMonitor.Web.Controllers
             {
                 try
                 {
-                    var contact = new Contact(
-                        new ContactIdentifier("ad-network", "ABC123456", ContactIdentifierType.Anonymous)
-                    );
+                    //var contact = new Contact(
+                    //    new ContactIdentifier("ad-network", "ABC123456", ContactIdentifierType.Known)
+                    //);
 
-                    IReadOnlyCollection<ContactIdentifier> identifiers = contact.Identifiers;
+                    //IReadOnlyCollection<ContactIdentifier> identifiers = contact.Identifiers;
 
+                    //client.Submit();
+
+
+                    var identifiers = new ContactIdentifier[]
+                    {
+                        new ContactIdentifier("twitter", "longhorntaco", ContactIdentifierType.Known),
+                        new ContactIdentifier("domain", "longhorn.taco", ContactIdentifierType.Known)
+                    };
+                    var contact = new Contact(identifiers);
+
+                    var personalInfoFacet = new PersonalInformation
+                    {
+                        FirstName = "Longhorn",
+                        LastName = "Taco"
+                    };
+                    client.SetFacet<PersonalInformation>(contact, PersonalInformation.DefaultFacetKey, personalInfoFacet);
+
+                    var emailFacet = new EmailAddressList(new EmailAddress("longhorn@taco.com", true), "twitter");
+                    client.SetFacet<EmailAddressList>(contact, EmailAddressList.DefaultFacetKey, emailFacet);
+
+                    client.AddContact(contact);
                     client.Submit();
+
+
                 }
                 catch (XdbExecutionException ex)
                 {
