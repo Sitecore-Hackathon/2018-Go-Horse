@@ -2,10 +2,12 @@
 
 Module develop by GO HORSE TEAM , Sitecore Hackathon 2018
 
+
 ## Summary
 
 **Category:** xConnect
-Purpose: The Module automatically tracks all tweets for a specified #hashtag and identify accounts that interact with it and import them to xDB. 
+**Purpose:** Identify personas and fire goals based on a twitter HashTag
+**Detailed Description** : The Module automatically tracks all tweets for a specified #hashtag and identify accounts that interact with it and import them to xDB. 
 This module helps marketers to identify the profile of each user along with their engagement with the #hashtag, 
 e.g. if someone tweets on #schackthon, visit the website, and fill in a "Visit Us" Form, then we can match the user to a given persona
 and show personalized content.
