@@ -59,9 +59,14 @@ Please include screenshots where necessary. You can add images to the `./images`
 
 ![Hackathon Logo](images/hackathon.png?raw=true "Hackathon Logo")
 
+
 You can embed images of different formats too:
 
-![Deal With It](images/contacts.png?raw=true "Deal With It")
+![Contacts](images/contacts.png?raw=true "Contacts")
+
+![Task Scheduler](images/taskscheduler.png?raw=true "Task Scheduler")
+
+![Task Scheduler](images/powershellforcetask.png?raw=true "Task Scheduler")
 
 And you can embed external images too:
 

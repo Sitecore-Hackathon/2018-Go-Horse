@@ -22,6 +22,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{D27C83
 		documentation\images\contacts.png = documentation\images\contacts.png
 		documentation\images\deal-with-it.gif = documentation\images\deal-with-it.gif
 		documentation\images\hackathon.png = documentation\images\hackathon.png
+		documentation\images\powershellforcetask.png = documentation\images\powershellforcetask.png
+		documentation\images\TaskScheduler.png = documentation\images\TaskScheduler.png
 	EndProjectSection
 EndProject
 Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "TDS", "TDS\TDS.scproj", "{886EFDF7-20F5-479B-9654-898BA8BD6D8D}"
