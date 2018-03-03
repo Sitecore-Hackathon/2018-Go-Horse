@@ -24,7 +24,7 @@ and show personalized content.
 Provide detailed instructions on how to install the module, and include screenshots where necessary.
 1. Install Sitecore 9
 2. Use the Sitecore Installation wizard to install the Sitecore HashTagMonitor module [package](#link-to-package)
-3. Use the Sitecore Installation wizard to install the Example Web Sitecore [package](#link-to-package)
+3. Use the Sitecore Installation wizard to install the Example Web Sitecore [package](https://github.com/Sitecore-Hackathon/2018-Go-Horse/blob/master/sc.package/GoHorse_Sample_Site.update)
 4. Install Sitecore PowerShell [OPTIONAL STEP] : This can help you to Force start the TASK without waiting the necessary amout of time
 5. Publish web 
 6. Configure HashTag on the sitecore item (/sitecore/system/Modules/HashTagMonitor/Test/SCHackathon), the Standard #HashTag is configured as #SCHackathon
@@ -62,8 +62,6 @@ He will be redirected to the home page and get a personalized message.
 ![Thanks for tweeting](images/ThanksForTweeting.jpg?raw=true "Thanks for tweeting")
 
 ## Video
-Link to the video
-
 [Click here to watch the module presentation on YouTube](https://youtu.be/2lEAazVlHUQ) 
 
 
