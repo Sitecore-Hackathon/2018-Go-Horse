@@ -46,10 +46,13 @@ After you run the Process, go to "Experience Profile" and check the List of Cont
 The image below, shows all the Contacts created after the Task was runned
 ![Contacts](images/contacts.png?raw=true "Contacts")
 
-Acessing the Website :
+Acessing the Website:
 User should access the home at e.g. "gohorse.local", click on visit us call to action button, fill the form with his personal data and click on Submit. 
+
 ![Visit Us](images/VisitUs.png?raw=true "Visit Us")
+
 He will be redirected to the home page and get a personalized message.
+
 ![Thanks for tweeting](images/ThanksForTweeting.jpg?raw=true "Thanks for tweeting")
 
 ## Video
