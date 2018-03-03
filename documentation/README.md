@@ -14,12 +14,11 @@ So it will add points to this category
 
 Does your module rely on other Sitecore modules or frameworks?
 
-- List any dependencies
+- List any dependencies: 
 - xConnect must be properly installed and configured
 - Task configured must be properly set as well
 - Sitecore items must be installed
-
-
+- Sitecore PowerShell it not necessary, but may help to start the TASK
 
 ## Installation
 
@@ -28,9 +27,9 @@ Provide detailed instructions on how to install the module, and include screensh
 1. Run the project Sitecore.HashTagMonitor.ModelBuilder, this .exe will generate the file "CollectionModel, 1.0.json" 
 2 .Copy  the generated file  your ExConnect Installation : "C:\inetpub\wwwroot\gohorse.xconnect\App_data\Models"
 
-1. Use the Sitecore Installation wizard to install the [package](#link-to-package)
-2. ???
-3. Profit
+3. Use the Sitecore Installation wizard to install the [package](#link-to-package)
+4. InstallSitecore PowerShell (OPTIONAL STEP) : If you don't wanna wait some minutes to the task to be runned, you can install PowerShell to Fire
+5. Profit
 
 ## Configuration
 
