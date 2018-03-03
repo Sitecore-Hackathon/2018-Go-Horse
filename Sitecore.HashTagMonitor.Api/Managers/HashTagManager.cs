@@ -196,7 +196,7 @@ namespace Sitecore.HashTagMonitor.Api.Managers
                     {
                         DataKey = tweet.IdStr,
                         Text = tweet.Text,
-                        Url = "https://twitter.com/intent/retweet?tweet_id=" + tweet.Id
+                        Url = "https://twitter.com/statuses/" + tweet.IdStr
                     };
 
                     interaction.Events.Add(newEvent);
