@@ -24,6 +24,9 @@ Does your module rely on other Sitecore modules or frameworks?
 
 Provide detailed instructions on how to install the module, and include screenshots where necessary.
 
+1. Run the project Sitecore.HashTagMonitor.ModelBuilder, generate the file "CollectionModel, 1.0.json" 
+and copy this file to  C:\inetpub\wwwroot\gohorse.xconnect\App_data\Models
+
 1. Use the Sitecore Installation wizard to install the [package](#link-to-package)
 2. ???
 3. Profit
