@@ -16,13 +16,13 @@ to identify the profile of each user along with their engagement with the #hasht
 Provide detailed instructions on how to install the module, and include screenshots where necessary.
 1. Install Sitecore 9
 2. Run Sitecore9 post build installation Steps 
-3. Go to(Control Panel ->  Index Manager Rebuild all indexes )
-4. Go to(Control Panel ->  Database -> Rebuild link Database )
-5. Go to(Control Panel ->  Analytics  -> Deploy Marketing Definitions )
-6. Use the Sitecore Installation wizard to install the Sitecore HashTagMonitor module [package](#link-to-package)
-7. Use the Sitecore Installation wizard to install the Example Web Sitecore [package](#link-to-package)
-8. Install Sitecore PowerShell [OPTIONAL STEP] : This can help you to Force start the TASK without waiting the necessary amout of time
-9. Configure HashTag, the Standard #HashTag is configured as #SCHackathon
+3. Use the Sitecore Installation wizard to install the Sitecore HashTagMonitor module [package](#link-to-package)
+4. Use the Sitecore Installation wizard to install the Example Web Sitecore [package](#link-to-package)
+5. Install Sitecore PowerShell [OPTIONAL STEP] : This can help you to Force start the TASK without waiting the necessary amout of time
+6. Configure HashTag, the Standard #HashTag is configured as #SCHackathon
+7. Go to(Control Panel ->  Index Manager Rebuild all indexes )
+8. Go to(Control Panel ->  Database -> Rebuild link Database )
+9. Go to(Control Panel ->  Analytics  -> Deploy Marketing Definitions )
 
 ## Configuration
 
