@@ -23,7 +23,7 @@ e.g. if someone twitts on #schackthon, visit the website , and fill in a VisitUs
 and show personalized content.
 
 ## Solutions
--  HashTagMonitor Solution : 
+-  HashTagMonitor Solution(Our Module) : 
 https://github.com/Sitecore-Hackathon/2018-Go-Horse/blob/master/Hackathon.HashTagMonitor.sln
 
 -  Practical application Website with Personalization based on Tweet Goal Example  : 
