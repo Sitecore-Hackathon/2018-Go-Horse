@@ -42,8 +42,8 @@ The image below the scheduler configured to be executed every 5 minutes
 If you can't wait, Force the importation procedure by Firing the following url
 http://myur/api/sitecore/hash/Process
 
-After you run the Process, go to "Experience Profile" and check the List of Contacts
-The image below, shows all the Contacts created after the Task was runned
+After you run the Process, go to "Experience Profile" and check the List of Contacts. The image below, shows all the Contacts created after the Task was runned.
+
 ![Contacts](images/contacts.png?raw=true "Contacts")
 
 Acessing the Website:
