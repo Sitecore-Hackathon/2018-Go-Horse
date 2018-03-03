@@ -67,7 +67,7 @@ The image below the scheduler configured to be executed every 5 minutes
 The image below demonstrates how to Force the Task to be run
 ![Task Scheduler](images/powershellforcetask.png?raw=true "Powershell Task")
 
-The image below demonstrates how to Force the Task to be run
+The image below demonstrates the website
 ![Visit Us](images/VisitUs.png?raw=true "Visit Us")
 
 The image below show the configured HashTag
