@@ -43,7 +43,7 @@ The image below show the configured HashTag
 After the HashTag is defined, the user can run the Task Scheduler in order to import all the tweets into the xDB.
 The image below the scheduler configured to be executed every 5 minutes.
 
-![Task Scheduler](images/taskscheduler.png?raw=true "Task Scheduler")
+![Task Scheduler](images/TaskScheduler.png?raw=true "Task Scheduler")
 
 If you can't wait, Force the importation procedure by Firing the following url
 http://myur/api/sitecore/hash/Process
