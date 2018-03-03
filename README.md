@@ -32,6 +32,5 @@ https://github.com/Sitecore-Hackathon/2018-Go-Horse/blob/master/GoHorse.Website.
 
 
 ## Video
-Link to the video
 
 [Click here to watch the module presentation on YouTube](https://youtu.be/2lEAazVlHUQ) 
