@@ -36,7 +36,7 @@ namespace GoHorse.Feature.Forms.Actions
 
             var twitterAccount = GetValue(twitterAccountField);
             if (!string.IsNullOrEmpty(twitterAccount))
-                Sitecore.Analytics.Tracker.Current.Session.IdentifyAs("twitter", GetValue(twitterAccountField));
+                Tracker.Current.Session.IdentifyAs("twitter", twitterAccount);
 
             if (firstNameField == null && lastNameField == null && emailField == null)
             {
@@ -47,14 +47,11 @@ namespace GoHorse.Feature.Forms.Actions
             {
                 try
                 {
-                    var source = "VisitUs.Form";
-                    var id = Sitecore.Analytics.Tracker.Current.Session.Contact.ContactId.ToString("N");
-                    //CurrentTracker.Session.IdentifyAs(source, id);
-                    var trackerIdentifier = new IdentifiedContactReference(source, id);
+                    var trackerIdentifier = new IdentifiedContactReference("twitter", twitterAccount);
                     var expandOptions = new ContactExpandOptions(
                         CollectionModel.FacetKeys.PersonalInformation,
                         CollectionModel.FacetKeys.EmailAddressList);
-                    Contact contact = client.Get(trackerIdentifier, expandOptions);
+                    var contact = client.Get(trackerIdentifier, expandOptions);
                     SetPersonalInformation(GetValue(firstNameField), GetValue(lastNameField), GetValue(twitterAccountField), contact, client);
                     SetEmail(GetValue(emailField), contact, client);
                     client.Submit();
