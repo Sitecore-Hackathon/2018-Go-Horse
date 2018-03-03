@@ -17,11 +17,31 @@ namespace Sitecore.HashTagMonitor.Web.Controllers
             {
                 try
                 {
-                    var contact = new Contact(
-                        new ContactIdentifier("twitter", "myrtlesitecore", ContactIdentifierType.Known)
-                    );
+                    var firstContact = new Contact();
+                    client.AddContact(firstContact); // Extension found in Sitecore.XConnect.Operations
 
-                    client.AddContactIdentifier(contact, new ContactIdentifier("ad-network", "ABC123456", ContactIdentifierType.Anonymous));
+                    // Submits the batch, which contains two operations
+                    client.Submit();
+                }
+                catch (XdbExecutionException ex)
+                {
+                    // Manage exception
+                }
+            }
+
+            return null;
+        }
+
+        [HttpGet]
+        public ActionResult AddContact()
+        {
+            using (XConnectClient client = XConnect.Client.Configuration.SitecoreXConnectClientConfiguration.GetClient())
+            {
+                try
+                {
+                    var contact = new Contact(
+                        new ContactIdentifier("ad-network", "ABC123456", ContactIdentifierType.Anonymous)
+                    );
 
                     IReadOnlyCollection<ContactIdentifier> identifiers = contact.Identifiers;
 
