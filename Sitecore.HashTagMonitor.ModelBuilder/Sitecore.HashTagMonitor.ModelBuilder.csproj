@@ -45,6 +45,10 @@
       <HintPath>..\packages\Sitecore.XConnect.Collection.Model.Plugins.NoReferences.9.0.171219\lib\NET462\Sitecore.XConnect.Collection.Model.Plugins.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Sitecore.XConnect.Search, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.XConnect.Search.NoReferences.9.0.171219\lib\NET462\Sitecore.XConnect.Search.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Interactive.Async, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
