@@ -21,3 +21,17 @@ The Module automatically tracks all tweets for a specified #hashtag and identify
 This module helps marketers to identify the profile of each user along with their engagement with the #hashtag, 
 e.g. if someone twitts on #schackthon, visit the website , and fill in a VisitUs Form , then we can match the user to a given persona
 and show personalized content.
+
+## Solutions
+-  HashTagMonitor Solution : 
+https://github.com/Sitecore-Hackathon/2018-Go-Horse/blob/master/Hackathon.HashTagMonitor.sln
+
+-  Practical application Website with Personalization based on Tweet Goal Example  : 
+https://github.com/Sitecore-Hackathon/2018-Go-Horse/blob/master/GoHorse.Website.sln
+
+
+
+## Video
+Link to the video
+
+[Click here to watch the module presentation on YouTube](https://youtu.be/2lEAazVlHUQ) 
