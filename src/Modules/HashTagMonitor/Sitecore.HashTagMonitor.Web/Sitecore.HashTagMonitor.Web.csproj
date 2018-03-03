@@ -131,8 +131,9 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App_Config\Include\Sitecore.HashTagMonitor.config" />
+    <Content Include="App_Config\Include\Sitecore.HashTagMonitor.config" />
     <None Include="Properties\PublishProfiles\Deploy Dev.pubxml" />
+    <None Include="Properties\PublishProfiles\Publish - Release.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sitecore.HashTagMonitor.Api\Sitecore.HashTagMonitor.Api.csproj">
