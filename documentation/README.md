@@ -6,7 +6,7 @@ Module develop by GO HORSE TEAM , Sitecore Hackathon 2018
 
 **Category:** xConnect
 
-Purpose :The Module gets all tweets for a particular #hashtagh, add import this information to the xDB , this will help marketers 
+Purpose :The Module gets all tweets for a particular #hashtag, add import this information to the xDB , this will help marketers 
 to identify the Profile of each user, Examples: If someone post things on #schackthon, we can inferir that this particular user is a Geek. 
 So it will add points to this category
 
@@ -16,7 +16,7 @@ Does your module rely on other Sitecore modules or frameworks?
 
 - List any dependencies: 
 - xConnect must be properly installed and configured(Sitecore 9 post build steps)
-- Sitecore PowerShell it not necessary, but may help to start the Sitecore TASK
+- Sitecore PowerShell Extensions-4.7 for Sitecore 8 it not necessary, but may help to start the Sitecore TASK manually and see the results
 
 ## Installation
 
