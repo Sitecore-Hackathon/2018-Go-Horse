@@ -1,12 +1,4 @@
 ﻿<CodeGeneration Generator="Template Class">
-  <shape designerX="20" designerY="28">
-    <template templatename="HashTag" templateid="{C302BA3A-3B47-4C23-B531-6D327372F5E2}" templateuri="/gohorse.local/master/{C302BA3A-3B47-4C23-B531-6D327372F5E2}" classname="HashTag">
-      <section id="{AA8264CA-C364-472D-ACB1-00F62CCA4D77}" name="Configuration">
-        <field id="{1F972D3A-F69D-4A4A-B9DF-811B24F07C15}" name="Hashtag" shared="0" source="" type="Single-Line Text" unversioned="0" propertyname="Hashtag" />
-        <field id="{3D910726-BA96-41DF-8AFE-48716E715D53}" name="Pattern Card" shared="0" source="/sitecore/system/Marketing Control Panel/Profiles" type="Droptree" unversioned="0" propertyname="PatternCardReference" />
-      </section>
-    </template>
-  </shape>
   <shape designerX="242" designerY="26">
     <template templatename="HashTag Folder" templateid="{25392608-13DE-4475-82D5-9F4BB8C11C65}" templateuri="/gohorse.local/master/{25392608-13DE-4475-82D5-9F4BB8C11C65}" classname="HashTagFolder" />
   </shape>
@@ -40,5 +32,17 @@
         <field id="{329B953D-900F-4987-9D68-2B30FF982DBF}" name="DefaultValue" shared="1" source="" type="Integer" unversioned="0" propertyname="DefaultValue" />
       </section>
     </template>
+  </shape>
+  <shape designerX="20" designerY="28">
+    <template templatename="HashTag" templateid="{C302BA3A-3B47-4C23-B531-6D327372F5E2}" templateuri="/gohorse.local/master/{C302BA3A-3B47-4C23-B531-6D327372F5E2}" classname="HashTag">
+      <section id="{AA8264CA-C364-472D-ACB1-00F62CCA4D77}" name="Configuration">
+        <field id="{1F972D3A-F69D-4A4A-B9DF-811B24F07C15}" name="Hashtag" shared="0" source="" type="Single-Line Text" unversioned="0" propertyname="Hashtag" />
+        <field id="{3D910726-BA96-41DF-8AFE-48716E715D53}" name="Pattern Card" shared="0" source="/sitecore/system/Marketing Control Panel/Profiles" type="Droptree" unversioned="0" propertyname="PatternCardReference" />
+        <field id="{A9929B36-7C43-424F-A4D1-FA94A4AA3DBC}" name="Goal" shared="0" source="/sitecore/system/Marketing Control Panel/Goals" type="Droptree" unversioned="0" propertyname="GoalReference" />
+      </section>
+    </template>
+  </shape>
+  <shape designerX="29" designerY="389">
+    <template templatename="Goal" templateid="{475E9026-333F-432D-A4DC-52E03B75CB6B}" templateuri="/gohorse.local/master/{475E9026-333F-432D-A4DC-52E03B75CB6B}" classname="Goal" />
   </shape>
 </CodeGeneration>

@@ -22,75 +22,6 @@ namespace Sitecore.HashTagMonitor.Api.Templates
   using Sitecore.Data;
   
       
-  /// <summary>Represents the "HashTag" template.</summary>
-  public partial class HashTag : CustomItem
-  {
-    public static readonly ID TemplateID = ID.Parse("{C302BA3A-3B47-4C23-B531-6D327372F5E2}");
-
-    public HashTag(Item item) : base(item) {
-    }
-
-    public static class FieldIds {
-      
-      public static readonly ID Hashtag = ID.Parse("{1F972D3A-F69D-4A4A-B9DF-811B24F07C15}");
-
-      public static readonly ID PatternCardReference = ID.Parse("{3D910726-BA96-41DF-8AFE-48716E715D53}");
-
-    }
-    
-    /// <summary>Gets or sets the "Hashtag" field.</summary>
-    public string Hashtag 
-    {
-      get 
-      {
-        return this.InnerItem[FieldIds.Hashtag];
-      }
-      set
-      {
-        this.InnerItem[FieldIds.Hashtag] = value;
-      }
-    }
-  
-    /// <summary>Gets the "Pattern Card" field.</summary>
-    public ReferenceField PatternCardReference 
-    {
-      get 
-      {
-        return this.InnerItem.Fields[FieldIds.PatternCardReference];
-      }
-    }
-  
-    public static HashTag Create(Item item) 
-    {
-      return new HashTag(item);
-    }
-
-    public static implicit operator Item (HashTag item)
-    {
-      if (item == null)
-      {
-        return null;
-      }
-
-      return item.InnerItem;
-    }
-
-    public static explicit operator HashTag(Item item)
-    {
-      if (item == null)
-      {
-        return null;
-      }
-
-      if (item.TemplateID != TemplateID)
-      {
-        return null;
-      }
-
-      return Create(item);
-    }
-  }
-      
   /// <summary>Represents the "HashTag Folder" template.</summary>
   public partial class HashTagFolder : CustomItem
   {
@@ -433,6 +364,129 @@ namespace Sitecore.HashTagMonitor.Api.Templates
     }
 
     public static explicit operator ProfileKey(Item item)
+    {
+      if (item == null)
+      {
+        return null;
+      }
+
+      if (item.TemplateID != TemplateID)
+      {
+        return null;
+      }
+
+      return Create(item);
+    }
+  }
+      
+  /// <summary>Represents the "HashTag" template.</summary>
+  public partial class HashTag : CustomItem
+  {
+    public static readonly ID TemplateID = ID.Parse("{C302BA3A-3B47-4C23-B531-6D327372F5E2}");
+
+    public HashTag(Item item) : base(item) {
+    }
+
+    public static class FieldIds {
+      
+      public static readonly ID Hashtag = ID.Parse("{1F972D3A-F69D-4A4A-B9DF-811B24F07C15}");
+
+      public static readonly ID PatternCardReference = ID.Parse("{3D910726-BA96-41DF-8AFE-48716E715D53}");
+
+      public static readonly ID GoalReference = ID.Parse("{A9929B36-7C43-424F-A4D1-FA94A4AA3DBC}");
+
+    }
+    
+    /// <summary>Gets or sets the "Hashtag" field.</summary>
+    public string Hashtag 
+    {
+      get 
+      {
+        return this.InnerItem[FieldIds.Hashtag];
+      }
+      set
+      {
+        this.InnerItem[FieldIds.Hashtag] = value;
+      }
+    }
+  
+    /// <summary>Gets the "Pattern Card" field.</summary>
+    public ReferenceField PatternCardReference 
+    {
+      get 
+      {
+        return this.InnerItem.Fields[FieldIds.PatternCardReference];
+      }
+    }
+  
+    /// <summary>Gets the "Goal" field.</summary>
+    public ReferenceField GoalReference 
+    {
+      get 
+      {
+        return this.InnerItem.Fields[FieldIds.GoalReference];
+      }
+    }
+  
+    public static HashTag Create(Item item) 
+    {
+      return new HashTag(item);
+    }
+
+    public static implicit operator Item (HashTag item)
+    {
+      if (item == null)
+      {
+        return null;
+      }
+
+      return item.InnerItem;
+    }
+
+    public static explicit operator HashTag(Item item)
+    {
+      if (item == null)
+      {
+        return null;
+      }
+
+      if (item.TemplateID != TemplateID)
+      {
+        return null;
+      }
+
+      return Create(item);
+    }
+  }
+      
+  /// <summary>Represents the "Goal" template.</summary>
+  public partial class Goal : CustomItem
+  {
+    public static readonly ID TemplateID = ID.Parse("{475E9026-333F-432D-A4DC-52E03B75CB6B}");
+
+    public Goal(Item item) : base(item) {
+    }
+
+    public static class FieldIds {
+      
+    }
+    
+    public static Goal Create(Item item) 
+    {
+      return new Goal(item);
+    }
+
+    public static implicit operator Item (Goal item)
+    {
+      if (item == null)
+      {
+        return null;
+      }
+
+      return item.InnerItem;
+    }
+
+    public static explicit operator Goal(Item item)
     {
       if (item == null)
       {

@@ -8,6 +8,7 @@ using Sitecore.XConnect;
 using Sitecore.XConnect.Client;
 using Sitecore.XConnect.Collection.Model;
 using TweetSharp;
+using Goal = Sitecore.HashTagMonitor.Api.Templates.Goal;
 
 namespace Sitecore.HashTagMonitor.Api.Managers
 {
@@ -77,11 +78,11 @@ namespace Sitecore.HashTagMonitor.Api.Managers
                 if (!hashTagText.StartsWith("#"))
                     hashTagText = "#" + hashTagText;
 
-                ProcessHashTag(hashTagText, hashTag.PatternCard);
+                ProcessHashTag(hashTagText, hashTag.PatternCard, hashTag.Goal);
             }
         }
 
-        public void ProcessHashTag(string hashtag, PatternCard patternCard)
+        public void ProcessHashTag(string hashtag, PatternCard patternCard, Goal goal)
         {
             // Get all tweets from hashtag
             var tweets = _twitter.GetTweets(hashtag, TwitterSearchResultType.Recent, 200);
@@ -95,7 +96,7 @@ namespace Sitecore.HashTagMonitor.Api.Managers
 
                 // Create Interaction
                 var isNewInteraction = false;
-                var interaction = CreateOrGetInteraction(hashtag, contact, tweet, out isNewInteraction);
+                var interaction = CreateOrGetInteraction(hashtag, contact, tweet, goal, out isNewInteraction);
                 if (interaction == null)
                     continue;
 
@@ -188,7 +189,7 @@ namespace Sitecore.HashTagMonitor.Api.Managers
             return ret;
         }
 
-        private Interaction CreateOrGetInteraction(string hashtag, Contact contact, TwitterStatus tweet, out bool isNewInteraction)
+        private Interaction CreateOrGetInteraction(string hashtag, Contact contact, TwitterStatus tweet, Goal goal, out bool isNewInteraction)
         {
             Interaction interaction = null;
             isNewInteraction = false;
@@ -210,14 +211,22 @@ namespace Sitecore.HashTagMonitor.Api.Managers
                     var userAgent = hashtag;
                     interaction = new Interaction(contact, InteractionInitiator.Brand, channelId, userAgent);
                     
+                    // Event - Page View
                     var newEvent = new PageViewEvent(tweet.CreatedDate, Guid.Empty, 1, "en")
                     {
                         DataKey = tweet.IdStr,
                         Text = tweet.Text,
                         Url = "https://twitter.com/statuses/" + tweet.IdStr
                     };
-
                     interaction.Events.Add(newEvent);
+
+                    // Event - Goal
+                    if (goal != null)
+                    {
+                        var newGoal = new XConnect.Goal(goal.ID.Guid, tweet.CreatedDate);
+                        interaction.Events.Add(newGoal);
+                    }
+
                     client.AddInteraction(interaction);
                     client.Submit();
                     return interaction;

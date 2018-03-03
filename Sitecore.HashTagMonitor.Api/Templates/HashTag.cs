@@ -5,5 +5,9 @@
         public PatternCard PatternCard => PatternCardReference.TargetItem == null
             ? null
             : new PatternCard(PatternCardReference.TargetItem);
+
+        public Goal Goal => GoalReference.TargetItem == null
+            ? null
+            : new Goal(GoalReference.TargetItem);
     }
 }
