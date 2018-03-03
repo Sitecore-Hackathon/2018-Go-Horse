@@ -59,7 +59,8 @@ He will be redirected to the home page and get a personalized message.
 ![Thanks for tweeting](images/ThanksForTweeting.jpg?raw=true "Thanks for tweeting")
 
 ## Video
+Link to the video
 
-Please provide a video highlighing your Hackathon module submission and provide a link to the video. Either a [direct link](https://www.youtube.com/watch?v=EpNhxW4pNKk) to the video, upload it to this documentation folder or maybe upload it to Youtube...
+[Click here to watch the module presentation on YouTube](https://youtu.be/2lEAazVlHUQ) 
 
-[![Sitecore Hackathon Video Embedding Alt Text](https://img.youtube.com/vi/EpNhxW4pNKk/0.jpg)](https://www.youtube.com/watch?v=EpNhxW4pNKk)
+
