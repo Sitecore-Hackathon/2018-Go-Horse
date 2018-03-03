@@ -7,11 +7,11 @@ Module develop by GO HORSE TEAM , Sitecore Hackathon 2018
 **Category:** xConnect
 Purpose: The Module automatically tracks all tweets for a specified #hashtag and identify accounts that interact with it and import them to xDB. 
 This module helps marketers to identify the profile of each user along with their engagement with the #hashtag, 
-e.g. if someone twitts on #schackthon, visit the website , and fill in a VisitUs Form , then we can match the user to a given persona
+e.g. if someone tweets on #schackthon, visit the website, and fill in a "Visit Us" Form, then we can match the user to a given persona
 and show personalized content.
 
 ## Pre-requisites
-- Sitecore 9 Update 1
+- Sitecore 9 Update-1
 - xConnect must be properly installed and configured (Sitecore 9 post build steps)
 
 ## Installation
@@ -35,22 +35,22 @@ The image below show the configured HashTag
 /sitecore/system/Modules/HashTagMonitor/Test/SCHackathon
 ![HashTag](images/configurehashtag.png?raw=true "Configure HashTag")
 
-After the HashTag is defined , The user can Run the Task Scheduler in order to import all the tweets into the xDB, 
+After the HashTag is defined, the user can run the Task Scheduler in order to import all the tweets into the xDB, 
 The image below the scheduler configured to be executed every 5 minutes
 ![Task Scheduler](images/taskscheduler.png?raw=true "Task Scheduler")
 
 If you can't wait, Force the importation procedure by Firing the following url
 http://myur/api/sitecore/hash/Process
 
-After you run the Process , Go to your "Experience Profile" and check the List of Contacts 
+After you run the Process, go to "Experience Profile" and check the List of Contacts
 The image below, shows all the Contacts created after the Task was runned
 ![Contacts](images/contacts.png?raw=true "Contacts")
 
 Acessing the Website :
-The image below demonstrates the website
+User should access the home at e.g. "gohorse.local", click on visit us call to action button, fill the form with his personal data and click on Submit. 
 ![Visit Us](images/VisitUs.png?raw=true "Visit Us")
-
-
+He will be redirected to the home page and get a personalized message.
+![Thanks for tweeting](images/ThanksForTweeting.jpg?raw=true "Thanks for tweeting")
 
 ## Video
 
