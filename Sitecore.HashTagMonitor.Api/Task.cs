@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GoHorseLib
+namespace Sitecore.HashTagMonitor.Api
 {
     public class Task
     {
