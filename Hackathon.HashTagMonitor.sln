@@ -26,9 +26,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{D27C83
 EndProject
 Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "TDS", "TDS\TDS.scproj", "{886EFDF7-20F5-479B-9654-898BA8BD6D8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{CE5A8A18-F2AE-42E0-A542-968376C2E194}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HashTagMonitor.Web", "Sitecore.HashTagMonitor.Web\Sitecore.HashTagMonitor.Web.csproj", "{CE5A8A18-F2AE-42E0-A542-968376C2E194}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashTagMonitor", "HashTagMonitor\HashTagMonitor.csproj", "{137D9EA5-9BBC-48B1-A836-C8A662DE4EFC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HashTagMonitor.Api", "Sitecore.HashTagMonitor.Api\Sitecore.HashTagMonitor.Api.csproj", "{137D9EA5-9BBC-48B1-A836-C8A662DE4EFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

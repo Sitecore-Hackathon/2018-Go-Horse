@@ -18,9 +18,6 @@
     <Name>TDS</Name>
     <RootNamespace>TDS</RootNamespace>
     <ManageRoles>False</ManageRoles>
-    <SourceWebVirtualPath>/Web.csproj</SourceWebVirtualPath>
-    <SourceWebProject>{ce5a8a18-f2ae-42e0-a542-968376c2e194}|Web\Web.csproj</SourceWebProject>
-    <SourceWebPhysicalPath>..\Web</SourceWebPhysicalPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,9 +42,21 @@
     </AssemblyAttributes>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Web\Web.csproj">
+    <SourceWebProjects Include="{ce5a8a18-f2ae-42e0-a542-968376c2e194}|Sitecore.HashTagMonitor.Web\Sitecore.HashTagMonitor.Web.csproj">
+      <SourceWebPhysicalPath>..\Sitecore.HashTagMonitor.Web</SourceWebPhysicalPath>
+      <SourceWebVirtualPath>/Sitecore.HashTagMonitor.Web.csproj</SourceWebVirtualPath>
+      <SourceWebProjectId>ce5a8a18-f2ae-42e0-a542-968376c2e194</SourceWebProjectId>
+    </SourceWebProjects>
+    <SourceWebProjects Include="{ce5a8a18-f2ae-42e0-a542-968376c2e194}|Web\Web.csproj">
+      <SourceWebPhysicalPath>..\Sitecore.HashTagMonitor.Web</SourceWebPhysicalPath>
+      <SourceWebVirtualPath>/Sitecore.HashTagMonitor.Web.csproj</SourceWebVirtualPath>
+      <SourceWebProjectId>ce5a8a18-f2ae-42e0-a542-968376c2e194</SourceWebProjectId>
+    </SourceWebProjects>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sitecore.HashTagMonitor.Web\Sitecore.HashTagMonitor.Web.csproj">
       <Project>{ce5a8a18-f2ae-42e0-a542-968376c2e194}</Project>
-      <Name>Web</Name>
+      <Name>Sitecore.HashTagMonitor.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" Condition="Exists('$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets')" />
