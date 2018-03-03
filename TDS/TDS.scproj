@@ -13,16 +13,14 @@
     <UseWebConfigReplacement>false</UseWebConfigReplacement>
     <DeleteAppCodeCompiledFiles>true</DeleteAppCodeCompiledFiles>
     <LegacyFileReplacement>false</LegacyFileReplacement>
-    <SourceWebPhysicalPath>
-    </SourceWebPhysicalPath>
-    <SourceWebProject>
-    </SourceWebProject>
-    <SourceWebVirtualPath>
-    </SourceWebVirtualPath>
     <SitecoreDatabase>master</SitecoreDatabase>
     <AssemblyName>TDS</AssemblyName>
     <Name>TDS</Name>
     <RootNamespace>TDS</RootNamespace>
+    <ManageRoles>False</ManageRoles>
+    <SourceWebVirtualPath>/Web.csproj</SourceWebVirtualPath>
+    <SourceWebProject>{ce5a8a18-f2ae-42e0-a542-968376c2e194}|Web\Web.csproj</SourceWebProject>
+    <SourceWebPhysicalPath>..\Web</SourceWebPhysicalPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,6 +43,12 @@
     <AssemblyAttributes Include="AssemblyVersion">
       <Value>$(AssemblyVersion)</Value>
     </AssemblyAttributes>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Web\Web.csproj">
+      <Project>{ce5a8a18-f2ae-42e0-a542-968376c2e194}</Project>
+      <Name>Web</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" Condition="Exists('$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets')" />
 </Project>

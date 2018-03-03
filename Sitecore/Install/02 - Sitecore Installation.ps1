@@ -13,14 +13,14 @@ $sqlPrefix = "$prefix$instance" # Don't touch this
 $PSScriptRoot = "C:\SitecoreInstaller\Packages\Sitecore 9.0.1 rev. 171219" 
 
 # SOLR Setup - your SOLR should be running (check your services window)
-$SolrUrl = "https://solr:8983/solr" 
+$SolrUrl = "https://localhost:8983/solr" 
 $SolrRoot = "C:\solr\solr-6.6.2" 
 $SolrService = "solr-6.6.2" 
 
 # SQL Setup - Must correctly point to an Admin user (the admin user is only used for the installation and can be removed later)
 $SqlServer = "localhost" 
 $SqlAdminUser = "sa" 
-$SqlAdminPassword= "b" 
+$SqlAdminPassword= "sa" 
 
 # Instance Names 
 $XConnectCollectionService = "$prefix.xconnect" 
