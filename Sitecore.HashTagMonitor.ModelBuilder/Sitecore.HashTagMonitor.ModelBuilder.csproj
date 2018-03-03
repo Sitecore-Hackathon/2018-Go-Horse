@@ -41,6 +41,10 @@
       <HintPath>..\packages\Sitecore.XConnect.Collection.Model.NoReferences.9.0.171219\lib\NET462\Sitecore.XConnect.Collection.Model.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Sitecore.XConnect.Collection.Model.Plugins, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.XConnect.Collection.Model.Plugins.NoReferences.9.0.171219\lib\NET462\Sitecore.XConnect.Collection.Model.Plugins.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
