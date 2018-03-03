@@ -1,24 +1,25 @@
 # Documentation
 
-The documentation for this years Hackathon must be provided as a readme in Markdown format as part of your submission. 
-
-You can find a very good reference to Github flavoured markdown reference in [this cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). If you want something a bit more WYSIWYG for editing then could use [StackEdit](https://stackedit.io/app) which provides a more user friendly interface for generating the Markdown code. Those of you who are [VS Code fans](https://code.visualstudio.com/docs/languages/markdown#_markdown-preview) can edit/preview directly in that interface too.
-
-Examples of things to include are the following.
+Module develop by GO HORSE TEAM , Sitecore hackathon 2018
 
 ## Summary
 
-**Category:** Hackathon Category
+**Category:** xConnect
 
-What is the purpose of your module? What problem does it solve and how does it do that?
+Purpose :The Module gets all tweets for a particular #hashtagh, add import this information to the xDB , this will help marketers 
+to identify the Profile of each user, Examples: If someone post things on #schackthon, we can inferir that this particular user is a Geek. 
+So it will add points to this category
 
 ## Pre-requisites
 
 Does your module rely on other Sitecore modules or frameworks?
 
 - List any dependencies
-- Or other modules that must be installed
-- Or services that must be enabled/configured
+- xConnect must be properly installed and configured
+- Task configured must be properly set as well
+- Sitecore items must be installed
+
+
 
 ## Installation
 
