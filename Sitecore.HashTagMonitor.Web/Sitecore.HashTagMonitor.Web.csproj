@@ -120,7 +120,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\HashController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +131,7 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App_Config\Include\Sitecore.HashTagMonitor.config" />
     <None Include="Properties\PublishProfiles\Deploy Dev.pubxml" />
   </ItemGroup>
   <ItemGroup>

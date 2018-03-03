@@ -89,12 +89,30 @@
     <Compile Include="Managers\HashTagManager.cs" />
     <Compile Include="Model\CollectionModel.cs" />
     <Compile Include="Task.cs" />
+    <Compile Include="Templates\HashTag.cs" />
+    <Compile Include="Templates\PatternCard.cs" />
+    <Compile Include="Templates\Templates.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Templates.scx</DependentUpon>
+    </Compile>
     <Compile Include="Twitter\Twitter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Templates\Templates.scx">
+      <Generator>SitecoreCodeGenerator</Generator>
+      <LastGenOutput>Templates.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Templates\Templates.scx.xslt">
+      <DependentUpon>Templates.scx</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
