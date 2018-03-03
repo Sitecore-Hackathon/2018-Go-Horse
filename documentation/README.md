@@ -61,7 +61,7 @@ Please include screenshots where necessary. You can add images to the `./images`
 
 You can embed images of different formats too:
 
-![Deal With It](images/deal-with-it.gif?raw=true "Deal With It")
+![Deal With It](images/contacts.png?raw=true "Deal With It")
 
 And you can embed external images too:
 

@@ -9,7 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configurat
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
 		nuget.config = nuget.config
-		README.md = README.md
 		TdsGlobal.config = TdsGlobal.config
 	EndProjectSection
 EndProject
@@ -20,6 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{D27C83D2-2EAF-4E44-A1ED-2B3C2EBB5854}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\Users\josea\Desktop\contacts.png = ..\..\Users\josea\Desktop\contacts.png
 		documentation\images\deal-with-it.gif = documentation\images\deal-with-it.gif
 		documentation\images\hackathon.png = documentation\images\hackathon.png
 	EndProjectSection
