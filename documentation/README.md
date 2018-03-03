@@ -20,6 +20,13 @@ e.g. if someone tweets on #SCHackthon, his informations are imported into xDB. L
 1. Install Sitecore 9
 2. Use the Sitecore Installation wizard to install the Sitecore HashTagMonitor module [package](#https://github.com/Sitecore-Hackathon/2018-Go-Horse/blob/master/sc.package/HashTagMonitor-1.0.zip) - In case of item conflicts choose Merge/Merge. In case of file conflicts, please overwrite them
 3. Use the Sitecore Update Installation Wizard Page using the following url: http://[your Sitecore website here]/sitecore/admin/UpdateInstallationWizard.aspx to install the Example Web Sitecore [package](https://github.com/Sitecore-Hackathon/2018-Go-Horse/blob/master/sc.package/GoHorse_Sample_Site.update)
+3.1 The Update has some steps 
+3.2 Anaylze
+![analyze step](images/analyze.png?raw=true "analyze step")
+3.3 Install
+![Install Package](images/installpackage.png?raw=true "Install Package")
+3.4 Processing instalation
+![Install Package](images/processing.png?raw=true "Install Package")
 4. Publish the website 
 5. Configure one or multiple HashTags under /sitecore/system/Modules/HashTagMonitor. The module comes with a test #HashTag configured as #SCHackathon, triggering a sample goal and registering a sample Profile Card
 6. Rebuild all indexes (Control Panel ->  Index Manager -> Rebuild all indexes)
