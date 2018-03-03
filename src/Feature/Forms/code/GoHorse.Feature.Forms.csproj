@@ -48,6 +48,27 @@
       <HintPath>..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Sitecore.Analytics, Version=11.18.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.NoReferences.9.0.171219\lib\NET462\Sitecore.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ExperienceForms, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.ExperienceForms.NoReferences.9.0.171219\lib\NET462\Sitecore.ExperienceForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Kernel, Version=11.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.Kernel.NoReferences.9.0.171219\lib\NET462\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.XConnect, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.XConnect.NoReferences.9.0.171219\lib\NET462\Sitecore.XConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.XConnect.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Client.NoReferences.9.0.171219\lib\NET462\Sitecore.XConnect.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.XConnect.Client.Configuration, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Client.Configuration.NoReferences.9.0.171219\lib\NET462\Sitecore.XConnect.Client.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.XConnect.Collection.Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Collection.Model.NoReferences.9.0.171219\lib\NET462\Sitecore.XConnect.Collection.Model.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -78,10 +99,13 @@
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actions\UpdateContactSubmitAction.cs" />
+    <Compile Include="Models\UpdateContactData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="sitecore modules\Web\ExperienceForms\scripts\jquery.validate.unobtrusive.bootstrap.min.js" />
+    <Content Include="sitecore\shell\client\Applications\FormsBuilder\Layouts\Actions\UpdateContact.js" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
