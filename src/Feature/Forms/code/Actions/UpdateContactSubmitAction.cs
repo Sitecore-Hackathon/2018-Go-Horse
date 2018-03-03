@@ -34,6 +34,10 @@ namespace GoHorse.Feature.Forms.Actions
             var emailField = GetFieldById(data.EmailFieldId, formSubmitContext.Fields);
             var twitterAccountField = GetFieldById(data.TwitterAccountFieldId, formSubmitContext.Fields);
 
+            var twitterAccount = GetValue(twitterAccountField);
+            if (!string.IsNullOrEmpty(twitterAccount))
+                Sitecore.Analytics.Tracker.Current.Session.IdentifyAs("twitter", GetValue(twitterAccountField));
+
             if (firstNameField == null && lastNameField == null && emailField == null)
             {
                 return false;
@@ -86,7 +90,7 @@ namespace GoHorse.Feature.Forms.Actions
                 return;
             }
             PersonalInformation personalInfoFacet = contact.Personal() ?? new PersonalInformation();
-            if (personalInfoFacet.FirstName == firstName 
+            if (personalInfoFacet.FirstName == firstName
                 && personalInfoFacet.LastName == lastName
                 && personalInfoFacet.Nickname == twitterAccount)
             {
