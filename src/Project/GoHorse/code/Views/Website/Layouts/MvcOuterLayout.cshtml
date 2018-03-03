@@ -1,20 +1,33 @@
-﻿@using Sitecore.Mvc
-@using Sitecore.ExperienceForms.Mvc.Html
+﻿@using Sitecore.ExperienceForms.Mvc.Html
+@using GoHorse.Foundation.Assets.Models
+@using GoHorse.Foundation.Assets.Services
+@using Sitecore.Mvc
 @using Sitecore.Mvc.Analytics.Extensions
+
 @{
     Layout = null;
 }
 
 <!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!--[if IE 9]><html lang="en" class="ie9 no-js"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="@Sitecore.Context.Language.CultureInfo.TwoLetterISOLanguageName">
 <head>
-    <title>@Html.Sitecore().Field("title", new { DisabledWebEdit = true })</title>
-    @Html.Sitecore().VisitorIdentification()
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    @if (!Sitecore.Context.PageMode.IsExperienceEditor)
+    {
+        @Html.Sitecore().Placeholder("head")
+    }
     @Html.RenderFormStyles()
     @Html.RenderFormScripts()
+    <!-- Latest compiled and minified JavaScript -->
+    @RenderAssetsService.Current.RenderScript(ScriptLocation.Head)
+    @RenderAssetsService.Current.RenderStyles()
+    @Html.Sitecore().VisitorIdentification()
 </head>
-<body style="padding-top:70px;">
+<body>
     @RenderBody()
 </body>
 </html>
