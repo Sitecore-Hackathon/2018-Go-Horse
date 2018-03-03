@@ -30,8 +30,8 @@ With this module marketers will be able to automate the interation with #hashtag
 ![Install Package](images/installpackage.png?raw=true "Install Package")
 3.4 Processing instalation
 ![Install Package](images/processing.png?raw=true "Install Package")
-4. Publish the website 
-5. Configure one or multiple HashTags under /sitecore/system/Modules/HashTagMonitor. The module comes with a test #HashTag configured as #SCHackathon, triggering a sample goal and registering a sample Profile Card
+4. Configure one or multiple HashTags under /sitecore/system/Modules/HashTagMonitor. The module comes with a test #HashTag configured as #SCHackathon, triggering a sample goal and registering a sample Profile Card
+5. Publish the website 
 6. Rebuild all indexes (Control Panel ->  Index Manager -> Rebuild all indexes)
 7. Rebuild Link Database (Control Panel ->  Database -> Rebuild link Database)
 8. Deploy Marketing Definitions (Control Panel ->  Analytics  -> Deploy Marketing Definitions)
