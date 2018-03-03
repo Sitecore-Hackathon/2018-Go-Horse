@@ -2,7 +2,7 @@
 version: 1
 id: {F2BCB207-037B-46DC-B538-DD965A5B7F82}
 database: master
-path: /sitecore/media library/Sandbox/Files
+path: /sitecore/media library/GoHorse/Files
 parent: {A7ECD557-0147-4B69-AADF-F71F716D24D9}
 name: Files
 master: {00000000-0000-0000-0000-000000000000}

@@ -9,13 +9,13 @@
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <EnableUpdateable>true</EnableUpdateable>
     <UseMerge>true</UseMerge>
-    <SingleAssemblyName>Sandbox.Foundation.Alerts.Master</SingleAssemblyName>
+    <SingleAssemblyName>GoHorse.Foundation.Alerts.Master</SingleAssemblyName>
     <UseWebConfigReplacement>false</UseWebConfigReplacement>
     <DeleteAppCodeCompiledFiles>true</DeleteAppCodeCompiledFiles>
     <LegacyFileReplacement>false</LegacyFileReplacement>
-    <AssemblyName>Sandbox.Foundation.Alerts.Master</AssemblyName>
+    <AssemblyName>GoHorse.Foundation.Alerts.Master</AssemblyName>
     <Name>GoHorse.Foundation.Alerts.Master</Name>
-    <RootNamespace>Sandbox.Foundation.Alerts.Master</RootNamespace>
+    <RootNamespace>GoHorse.Foundation.Alerts.Master</RootNamespace>
     <ManageRoles>False</ManageRoles>
     <SitecoreDatabase>master</SitecoreDatabase>
   </PropertyGroup>
@@ -43,7 +43,7 @@
       <SourceWebVirtualPath>/GoHorse.Foundation.Alerts.csproj</SourceWebVirtualPath>
       <SourceWebProjectId>183c8d1e-4f1f-4d55-86ed-455cb76e20fa</SourceWebProjectId>
     </SourceWebProjects>
-    <SourceWebProjects Include="{183c8d1e-4f1f-4d55-86ed-455cb76e20fa}|src\Foundation\Alerts\code\Sandbox.Foundation.Alerts.csproj">
+    <SourceWebProjects Include="{183c8d1e-4f1f-4d55-86ed-455cb76e20fa}|src\Foundation\Alerts\code\GoHorse.Foundation.Alerts.csproj">
       <SourceWebPhysicalPath>..\..\code</SourceWebPhysicalPath>
       <SourceWebVirtualPath>/GoHorse.Foundation.Alerts.csproj</SourceWebVirtualPath>
       <SourceWebProjectId>183c8d1e-4f1f-4d55-86ed-455cb76e20fa</SourceWebProjectId>

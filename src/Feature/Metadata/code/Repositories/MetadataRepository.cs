@@ -1,9 +1,9 @@
-﻿using System;
-using GoHorse.Feature.Metadata.Infrastructure.Pipelines.GetPageMetadata;
+﻿using GoHorse.Feature.Metadata.Infrastructure.Pipelines.GetPageMetadata;
 using GoHorse.Feature.Metadata.Models;
 using GoHorse.Foundation.DependencyInjection;
 using Sitecore.Data.Items;
 using Sitecore.Pipelines;
+using System;
 
 namespace GoHorse.Feature.Metadata.Repositories
 {

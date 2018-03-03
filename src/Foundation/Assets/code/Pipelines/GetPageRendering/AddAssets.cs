@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Xml;
-using GoHorse.Foundation.Assets.Models;
+﻿using GoHorse.Foundation.Assets.Models;
 using GoHorse.Foundation.Assets.Repositories;
 using Sitecore.Mvc.Pipelines.Response.GetPageRendering;
+using System.Collections.Generic;
+using System.Xml;
 
 namespace GoHorse.Foundation.Assets.Pipelines.GetPageRendering
 {

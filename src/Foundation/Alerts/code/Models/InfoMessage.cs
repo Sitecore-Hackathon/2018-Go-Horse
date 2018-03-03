@@ -29,9 +29,11 @@
         }
 
         public static InfoMessage Error(string message) => new InfoMessage(message, MessageType.Error);
-        public static InfoMessage Warning(string message) => new InfoMessage(message, MessageType.Warning);
-        public static InfoMessage Success(string message) => new InfoMessage(message, MessageType.Success);
-        public static InfoMessage Info(string message) => new InfoMessage(message, MessageType.Info);
 
+        public static InfoMessage Warning(string message) => new InfoMessage(message, MessageType.Warning);
+
+        public static InfoMessage Success(string message) => new InfoMessage(message, MessageType.Success);
+
+        public static InfoMessage Info(string message) => new InfoMessage(message, MessageType.Info);
     }
 }

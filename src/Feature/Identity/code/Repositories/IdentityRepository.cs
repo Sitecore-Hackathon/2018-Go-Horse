@@ -1,7 +1,7 @@
-﻿using System;
-using GoHorse.Foundation.SitecoreExtensions.Extensions;
+﻿using GoHorse.Foundation.SitecoreExtensions.Extensions;
 using Sitecore;
 using Sitecore.Data.Items;
+using System;
 
 namespace GoHorse.Feature.Identity.Repositories
 {

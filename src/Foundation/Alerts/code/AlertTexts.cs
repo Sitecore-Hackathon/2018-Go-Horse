@@ -12,6 +12,5 @@ namespace GoHorse.Foundation.Alerts
 
         public static string InvalidDataSource =>
             ("Data source isn't set or have wrong template");
-
     }
 }

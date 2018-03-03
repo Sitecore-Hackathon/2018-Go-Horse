@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Xml;
-using GoHorse.Foundation.Assets.Models;
+﻿using GoHorse.Foundation.Assets.Models;
 using Sitecore;
 using Sitecore.Data;
 using Sitecore.Diagnostics;
 using Sitecore.Mvc.Presentation;
 using Sitecore.Xml;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Xml;
 
 namespace GoHorse.Foundation.Assets.Repositories
 {

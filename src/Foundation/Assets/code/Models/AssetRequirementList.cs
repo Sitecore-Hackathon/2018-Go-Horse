@@ -1,7 +1,7 @@
-﻿using System.Collections;
+﻿using Sitecore.Caching;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Sitecore.Caching;
 
 namespace GoHorse.Foundation.Assets.Models
 {

@@ -4,7 +4,6 @@ namespace GoHorse.Feature.Teasers
 {
     public struct Templates
     {
-
         public struct TeaserContent
         {
             public static ID ID = new ID("{CE5103F9-606C-472D-8A19-0EC5DC40CFD5}");
@@ -38,6 +37,5 @@ namespace GoHorse.Feature.Teasers
                 public static readonly ID Label = new ID("{0E21EE0F-4B3F-4199-9693-37221C5DA967}");
             }
         }
-
     }
 }

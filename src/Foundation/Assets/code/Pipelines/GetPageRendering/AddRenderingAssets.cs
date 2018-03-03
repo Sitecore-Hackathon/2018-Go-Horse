@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using GoHorse.Foundation.Assets.Models;
+﻿using GoHorse.Foundation.Assets.Models;
 using GoHorse.Foundation.Assets.Repositories;
 using GoHorse.Foundation.SitecoreExtensions.Extensions;
 using Sitecore;
@@ -7,6 +6,7 @@ using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Mvc.Pipelines.Response.GetPageRendering;
 using Sitecore.Mvc.Presentation;
+using System.Collections.Generic;
 
 namespace GoHorse.Foundation.Assets.Pipelines.GetPageRendering
 {

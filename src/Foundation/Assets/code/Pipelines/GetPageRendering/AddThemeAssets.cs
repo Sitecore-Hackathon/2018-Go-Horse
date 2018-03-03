@@ -1,9 +1,9 @@
-﻿using System.Linq;
-using GoHorse.Foundation.SitecoreExtensions.Extensions;
+﻿using GoHorse.Foundation.SitecoreExtensions.Extensions;
 using Sitecore;
 using Sitecore.Data.Items;
 using Sitecore.Mvc.Pipelines.Response.GetPageRendering;
 using Sitecore.Mvc.Presentation;
+using System.Linq;
 
 namespace GoHorse.Foundation.Assets.Pipelines.GetPageRendering
 {

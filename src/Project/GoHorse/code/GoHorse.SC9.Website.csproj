@@ -110,7 +110,7 @@
     <Content Include="Views\Website\Layouts\Default.cshtml" />
     <Content Include="Views\Website\Layouts\DefaultForm.cshtml" />
     <Content Include="Views\Website\Layouts\MvcOuterLayout.cshtml" />
-    <Content Include="App_Config\Include\Project\Sandbox.Website.config" />
+    <Content Include="App_Config\Include\Project\GoHorse.Website.config" />
     <None Include="packages.config" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

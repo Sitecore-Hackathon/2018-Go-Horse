@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using GoHorse.Foundation.SitecoreExtensions.Services;
+﻿using GoHorse.Foundation.SitecoreExtensions.Services;
 using Sitecore;
 using Sitecore.Data;
 using Sitecore.Data.Fields;
@@ -11,6 +7,10 @@ using Sitecore.Data.Managers;
 using Sitecore.Diagnostics;
 using Sitecore.Links;
 using Sitecore.Resources.Media;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
 namespace GoHorse.Foundation.SitecoreExtensions.Extensions
 {

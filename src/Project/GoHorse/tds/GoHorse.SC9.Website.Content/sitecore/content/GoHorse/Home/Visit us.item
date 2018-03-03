@@ -2,9 +2,9 @@
 version: 1
 id: {39FFB879-ADBD-43A2-A4B5-C3D83D9D6062}
 database: master
-path: /sitecore/content/GoHorse/Home/Forms/Create account
-parent: {5EB80563-A868-4AB1-85B2-52A031552C5E}
-name: Create account
+path: /sitecore/content/GoHorse/Home/Visit us
+parent: {03A53C20-686D-4074-A310-65049B24C7EF}
+name: Visit us
 master: {00000000-0000-0000-0000-000000000000}
 template: {E4915361-E399-4C44-9908-12BBEB080890}
 templatekey: Page with form
@@ -20,8 +20,15 @@ content-length: 195
 ----version----
 language: en
 version: 1
-revision: 09bf40fc-3067-4009-8e21-2db9ddd059e5
+revision: b9a678c2-fb0d-4ea3-846e-4107563351a1
 
+----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 186
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{59D13C4F-0838-48AC-99BF-8B035C416361}" s:ds="{A6CD4866-0E54-4502-808C-E6F0CE7E7784}" /></d></r>
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -35,14 +42,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-09bf40fc-3067-4009-8e21-2db9ddd059e5
+b9a678c2-fb0d-4ea3-846e-4107563351a1
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20180216T160303Z
+20180303T134403Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

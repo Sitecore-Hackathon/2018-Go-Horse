@@ -1,7 +1,7 @@
-﻿using System;
-using Sitecore;
+﻿using Sitecore;
 using Sitecore.Data.Fields;
 using Sitecore.Resources.Media;
+using System;
 
 namespace GoHorse.Foundation.SitecoreExtensions.Extensions
 {

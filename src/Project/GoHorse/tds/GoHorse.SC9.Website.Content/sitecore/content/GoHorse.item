@@ -20,22 +20,22 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: 4960dddb-392a-4a97-ad78-c1b1db6e6db9
+revision: 46b60129-dcf3-4115-a0b6-1c0e052cfbbb
 
 ----field----
 field: {60980910-DF3F-4C3D-B534-B1509CDEADFF}
 name: SiteHeadingUpperText
 key: siteheadinguppertext
-content-length: 33
+content-length: 14
 
-A Free Bootstrap 4 Business Theme
+Welcome to the
 ----field----
 field: {8C61EAD7-FB91-4870-9187-E7A42F6C5A0C}
 name: SiteHeadingLowerText
 key: siteheadinglowertext
-content-length: 15
+content-length: 13
 
-Business Casual
+go-horse Café
 ----field----
 field: {CCD0F430-4DB8-4DFD-B57A-19EB2A767995}
 name: OrganisationName
@@ -56,21 +56,21 @@ name: __Revision
 key: __revision
 content-length: 36
 
-4960dddb-392a-4a97-ad78-c1b1db6e6db9
+46b60129-dcf3-4115-a0b6-1c0e052cfbbb
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20180303T120839Z
+20180303T130602Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
 content-length: 14
 
-sitecore\admin
+sitecore\Admin
 ----field----
 field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
 name: __Lock

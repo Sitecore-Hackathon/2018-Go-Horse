@@ -1,8 +1,8 @@
-﻿using System.Web;
-using Sitecore.Data;
+﻿using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Mvc.Helpers;
+using System.Web;
 
 namespace GoHorse.Foundation.SitecoreExtensions.Extensions
 {
@@ -68,6 +68,5 @@ namespace GoHorse.Foundation.SitecoreExtensions.Extensions
                 @class = cssClass ?? ""
             });
         }
-
     }
 }

@@ -1,7 +1,7 @@
-﻿using System.Web.Mvc;
-using GoHorse.Feature.Metadata.Repositories;
+﻿using GoHorse.Feature.Metadata.Repositories;
 using Sitecore.Mvc.Controllers;
 using Sitecore.Mvc.Presentation;
+using System.Web.Mvc;
 
 namespace GoHorse.Feature.Metadata.Controllers
 {

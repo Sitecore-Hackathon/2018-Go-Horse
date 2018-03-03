@@ -5,7 +5,7 @@ namespace GoHorse.Foundation.Assets.Models
 {
     public class AssetRequirementCache : CustomCache
     {
-        public AssetRequirementCache(long maxSize) : base("Sandbox.Foundation.AssetRequirements", maxSize)
+        public AssetRequirementCache(long maxSize) : base("GoHorse.Foundation.AssetRequirements", maxSize)
         {
         }
 

@@ -1,8 +1,8 @@
-﻿using System;
-using Sitecore;
+﻿using Sitecore;
 using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Sites;
+using System;
 
 namespace GoHorse.Foundation.SitecoreExtensions.Extensions
 {

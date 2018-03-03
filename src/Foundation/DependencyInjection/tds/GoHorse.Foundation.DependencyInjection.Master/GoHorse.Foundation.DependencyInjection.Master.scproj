@@ -9,13 +9,13 @@
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <EnableUpdateable>true</EnableUpdateable>
     <UseMerge>true</UseMerge>
-    <SingleAssemblyName>Sandbox.Foundation.DependencyInjection.Master</SingleAssemblyName>
+    <SingleAssemblyName>GoHorse.Foundation.DependencyInjection.Master</SingleAssemblyName>
     <UseWebConfigReplacement>false</UseWebConfigReplacement>
     <DeleteAppCodeCompiledFiles>true</DeleteAppCodeCompiledFiles>
     <LegacyFileReplacement>false</LegacyFileReplacement>
-    <AssemblyName>Sandbox.Foundation.DependencyInjection.Master</AssemblyName>
+    <AssemblyName>GoHorse.Foundation.DependencyInjection.Master</AssemblyName>
     <Name>GoHorse.Foundation.DependencyInjection.Master</Name>
-    <RootNamespace>Sandbox.Foundation.DependencyInjection.Master</RootNamespace>
+    <RootNamespace>GoHorse.Foundation.DependencyInjection.Master</RootNamespace>
     <ManageRoles>False</ManageRoles>
     <SitecoreDatabase>master</SitecoreDatabase>
   </PropertyGroup>
@@ -43,7 +43,7 @@
       <SourceWebVirtualPath>/GoHorse.Foundation.DependencyInjection.csproj</SourceWebVirtualPath>
       <SourceWebProjectId>f8bb7dfb-c363-448f-a250-6e78fc0d6e08</SourceWebProjectId>
     </SourceWebProjects>
-    <SourceWebProjects Include="{f8bb7dfb-c363-448f-a250-6e78fc0d6e08}|src\Foundation\DependencyInjection\code\Sandbox.Foundation.DependencyInjection.csproj">
+    <SourceWebProjects Include="{f8bb7dfb-c363-448f-a250-6e78fc0d6e08}|src\Foundation\DependencyInjection\code\GoHorse.Foundation.DependencyInjection.csproj">
       <SourceWebPhysicalPath>..\..\code</SourceWebPhysicalPath>
       <SourceWebVirtualPath>/GoHorse.Foundation.DependencyInjection.csproj</SourceWebVirtualPath>
       <SourceWebProjectId>f8bb7dfb-c363-448f-a250-6e78fc0d6e08</SourceWebProjectId>

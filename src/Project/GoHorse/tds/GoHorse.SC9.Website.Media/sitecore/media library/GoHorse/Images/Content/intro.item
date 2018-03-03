@@ -2,7 +2,7 @@
 version: 1
 id: {F4143843-57AD-419B-AAEF-6C4180FBCB76}
 database: master
-path: /sitecore/media library/Sandbox/Images/Content/intro
+path: /sitecore/media library/GoHorse/Images/Content/intro
 parent: {3195F84A-C9B6-4A7A-9B33-4FCC4E581586}
 name: intro
 master: {00000000-0000-0000-0000-000000000000}

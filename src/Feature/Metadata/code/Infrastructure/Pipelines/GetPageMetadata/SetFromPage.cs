@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using GoHorse.Feature.Metadata.Models;
+﻿using GoHorse.Feature.Metadata.Models;
 using GoHorse.Foundation.DependencyInjection;
 using GoHorse.Foundation.SitecoreExtensions.Extensions;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
 namespace GoHorse.Feature.Metadata.Infrastructure.Pipelines.GetPageMetadata
 {

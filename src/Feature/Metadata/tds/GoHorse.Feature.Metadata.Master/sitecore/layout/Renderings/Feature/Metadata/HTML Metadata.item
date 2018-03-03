@@ -16,7 +16,7 @@ name: Controller
 key: controller
 content-length: 81
 
-Sandbox.Feature.Metadata.Controllers.MetadataController, Sandbox.Feature.Metadata
+GoHorse.Feature.Metadata.Controllers.MetadataController, GoHorse.Feature.Metadata
 ----field----
 field: {DED9E431-3604-4921-A4B3-A6EC7636A5B6}
 name: Controller Action

@@ -7,7 +7,7 @@ namespace GoHorse.Foundation.Theming.Extensions
     {
         public static string GetBackgroundClass([NotNull] this Rendering rendering)
         {
-            return string.IsNullOrEmpty(rendering.Parameters[Constants.CssLayoutParameters.CssClass]) ? 
+            return string.IsNullOrEmpty(rendering.Parameters[Constants.CssLayoutParameters.CssClass]) ?
                 string.Empty : rendering.Parameters[Constants.CssLayoutParameters.CssClass];
         }
     }

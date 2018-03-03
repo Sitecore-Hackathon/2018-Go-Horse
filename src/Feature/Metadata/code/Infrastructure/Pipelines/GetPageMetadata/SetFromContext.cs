@@ -1,8 +1,7 @@
 ﻿using GoHorse.Foundation.DependencyInjection;
+using GoHorse.Foundation.SitecoreExtensions.Extensions;
 using Sitecore;
 using Sitecore.Data.Items;
-using GoHorse.Foundation.SitecoreExtensions;
-using GoHorse.Foundation.SitecoreExtensions.Extensions;
 
 namespace GoHorse.Feature.Metadata.Infrastructure.Pipelines.GetPageMetadata
 {

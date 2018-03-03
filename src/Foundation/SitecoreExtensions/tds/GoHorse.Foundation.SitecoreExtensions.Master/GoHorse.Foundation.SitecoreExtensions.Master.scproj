@@ -9,13 +9,13 @@
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <EnableUpdateable>true</EnableUpdateable>
     <UseMerge>true</UseMerge>
-    <SingleAssemblyName>Sandbox.Foundation.SitecoreExtensions.Master</SingleAssemblyName>
+    <SingleAssemblyName>GoHorse.Foundation.SitecoreExtensions.Master</SingleAssemblyName>
     <UseWebConfigReplacement>false</UseWebConfigReplacement>
     <DeleteAppCodeCompiledFiles>true</DeleteAppCodeCompiledFiles>
     <LegacyFileReplacement>false</LegacyFileReplacement>
-    <AssemblyName>Sandbox.Foundation.SitecoreExtensions.Master</AssemblyName>
+    <AssemblyName>GoHorse.Foundation.SitecoreExtensions.Master</AssemblyName>
     <Name>GoHorse.Foundation.SitecoreExtensions.Master</Name>
-    <RootNamespace>Sandbox.Foundation.SitecoreExtensions.Master</RootNamespace>
+    <RootNamespace>GoHorse.Foundation.SitecoreExtensions.Master</RootNamespace>
     <ManageRoles>False</ManageRoles>
     <SitecoreDatabase>master</SitecoreDatabase>
     <AssemblyStatus>Exclude</AssemblyStatus>
@@ -50,7 +50,7 @@
       <SourceWebVirtualPath>/GoHorse.Foundation.SitecoreExtensions.csproj</SourceWebVirtualPath>
       <SourceWebProjectId>864dc86f-6858-4047-9013-d6fdc80046c1</SourceWebProjectId>
     </SourceWebProjects>
-    <SourceWebProjects Include="{864dc86f-6858-4047-9013-d6fdc80046c1}|src\Foundation\SitecoreExtensions\code\Sandbox.Foundation.SitecoreExtensions.csproj">
+    <SourceWebProjects Include="{864dc86f-6858-4047-9013-d6fdc80046c1}|src\Foundation\SitecoreExtensions\code\GoHorse.Foundation.SitecoreExtensions.csproj">
       <SourceWebPhysicalPath>..\..\code</SourceWebPhysicalPath>
       <SourceWebVirtualPath>/GoHorse.Foundation.SitecoreExtensions.csproj</SourceWebVirtualPath>
       <SourceWebProjectId>864dc86f-6858-4047-9013-d6fdc80046c1</SourceWebProjectId>

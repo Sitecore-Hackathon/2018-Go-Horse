@@ -1,5 +1,5 @@
-﻿@using Sandbox.Foundation.Assets.Models
-@using Sandbox.Foundation.Assets.Services
+﻿@using GoHorse.Foundation.Assets.Models
+@using GoHorse.Foundation.Assets.Services
 @using Sitecore.Mvc
 @using Sitecore.Mvc.Analytics.Extensions
 
@@ -35,6 +35,5 @@
     @Html.Sitecore().Placeholder("page-footer")
 
     @RenderAssetsService.Current.RenderScript(ScriptLocation.Body)
-
 </body>
 </html>
