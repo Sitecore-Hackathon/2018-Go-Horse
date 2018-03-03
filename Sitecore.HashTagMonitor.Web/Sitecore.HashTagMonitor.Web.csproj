@@ -133,6 +133,12 @@
   <ItemGroup>
     <None Include="Properties\PublishProfiles\Deploy Dev.pubxml" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sitecore.HashTagMonitor.Api\Sitecore.HashTagMonitor.Api.csproj">
+      <Project>{137d9ea5-9bbc-48b1-a836-c8a662de4efc}</Project>
+      <Name>Sitecore.HashTagMonitor.Api</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

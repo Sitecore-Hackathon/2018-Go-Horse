@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Client;
 using Sitecore.XConnect.Collection.Model;
@@ -32,10 +29,91 @@ namespace Sitecore.HashTagMonitor.Api.Managers
                     continue;
 
                 // Create Interaction
-                //contact.Interactions.Any(p=>p.)
+                var isNewInteraction = false;
+                var interaction = CreateOrGetInteraction(hashtag, contact, tweet, out isNewInteraction);
+                if (interaction == null)
+                    continue;
 
+                // Create Event for tweet (if not created yet)
+                //if (!isNewInteraction)
+                    //CreateOrGetEvent(hashtag, interaction, tweet);
+            }
+        }
 
-                // Create Event for each tweet                
+        private Event CreateOrGetEvent(string hashtag, Interaction interaction, TwitterStatus tweet)
+        {
+            // Get Event if it does exists
+            var tweetEvent = interaction.Events.FirstOrDefault(p=>p.DataKey==tweet.IdStr);
+            if (tweetEvent != null)
+                return tweetEvent;
+
+            // Create event if does not exists
+            using (XConnectClient client = XConnect.Client.Configuration.SitecoreXConnectClientConfiguration.GetClient())
+            {
+                try
+                {
+                    var newEvent = new Event(Guid.NewGuid(), DateTime.Now)
+                    {
+                        DataKey = tweet.IdStr,
+                        Text = tweet.Text
+                    };
+
+                    interaction.Events.Add(newEvent);
+                    client.AddInteraction(interaction);
+                    client.Submit();
+                    return CreateOrGetEvent(hashtag, interaction, tweet);
+                }
+                catch (XdbExecutionException ex)
+                {
+                    // Manage exception
+                    Diagnostics.Log.Error(
+                        $"[HashTagMonitor] Error creating or retrieving interaction for interaction id '{interaction.Id}' with hashtag '{hashtag}'",
+                        ex, GetType());
+                    return null;
+                }
+            }
+        }
+
+        private Interaction CreateOrGetInteraction(string hashtag, Contact contact, TwitterStatus tweet, out bool isNewInteraction)
+        {
+            // Get interaction if it does exists
+            isNewInteraction = false;
+            var interaction = contact.Interactions?.FirstOrDefault(p => p.UserAgent == hashtag);
+            if (interaction != null)
+                return interaction;
+
+            // Create if does not exists
+            isNewInteraction = true;
+            using (XConnectClient client = XConnect.Client.Configuration.SitecoreXConnectClientConfiguration.GetClient())
+            {
+                try
+                {
+                    // Item ID of the "Twitter social community" Channel at 
+                    // /sitecore/system/Marketing Control Panel/Taxonomies/Channel/Online/Social community/Twitter social community
+                    var channelId = Guid.Parse("{6D3D2374-AF56-44FE-B99A-20843B440B58}");
+                    var userAgent = hashtag;
+                    var newInteraction = new Interaction(contact, InteractionInitiator.Brand, channelId, userAgent);
+                    
+                    var newEvent = new PageViewEvent(tweet.CreatedDate , Guid.NewGuid(),1 , tweet.Language)
+                    {
+                        DataKey = tweet.IdStr,
+                        Text = tweet.Text,
+                        Url = "https://twitter.com/intent/retweet?tweet_id=" + tweet.Id
+                    };
+
+                    newInteraction.Events.Add(newEvent);
+                    client.AddInteraction(newInteraction);
+                    client.Submit();
+                    return newInteraction;
+                }
+                catch (XdbExecutionException ex)
+                {
+                    // Manage exception
+                    Diagnostics.Log.Error(
+                        $"[HashTagMonitor] Error creating or retrieving interaction for contact '{contact.Personal().Nickname}' with hashtag '{hashtag}'",
+                        ex, GetType());
+                    return null;
+                }
             }
         }
 
@@ -55,8 +133,8 @@ namespace Sitecore.HashTagMonitor.Api.Managers
 
                     // Create Contact                    
                     var identifiers = new[] {
-                        new ContactIdentifier("twitter", hashtag, ContactIdentifierType.Known)
-                    };                                 
+                        new ContactIdentifier("twitter", authorAccount, ContactIdentifierType.Known)
+                    };
                     var newContact = new Contact(identifiers);
 
                     // Personal Info
@@ -66,19 +144,19 @@ namespace Sitecore.HashTagMonitor.Api.Managers
                     var personalInfoFacet = new PersonalInformation
                     {
                         FirstName = firstName,
-                        LastName = lastName
+                        LastName = lastName,
+                        Nickname = authorAccount
                     };
                     client.SetFacet<PersonalInformation>(newContact, PersonalInformation.DefaultFacetKey, personalInfoFacet);
 
                     // E-mail
-                    var emailFacet = new EmailAddressList(new EmailAddress("longhorn@taco.com", true), "twitter");
-                    client.SetFacet<EmailAddressList>(newContact, EmailAddressList.DefaultFacetKey, emailFacet);
+                    //var emailFacet = new EmailAddressList(new EmailAddress("longhorn@taco.com", true), "twitter");
+                    //client.SetFacet<EmailAddressList>(newContact, EmailAddressList.DefaultFacetKey, emailFacet);
 
                     // Add contact to XConnect
                     client.AddContact(newContact);
                     client.Submit();
-
-                    return newContact;
+                    return CreateOrGetContact(hashtag, tweet);
                 }
                 catch (XdbExecutionException ex)
                 {
