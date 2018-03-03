@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GoHorse.SC9.Website</RootNamespace>
     <AssemblyName>GoHorse.SC9.Website</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
@@ -111,10 +111,10 @@
     <Content Include="Views\Website\Layouts\DefaultForm.cshtml" />
     <Content Include="Views\Website\Layouts\MvcOuterLayout.cshtml" />
     <Content Include="App_Config\Include\Project\GoHorse.Website.config" />
-    <None Include="packages.config" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\Debug.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
