@@ -1,33 +1,33 @@
 ----item----
 version: 1
-id: {539F1533-51A7-4E12-8829-031E0E1822AB}
+id: {A37C56E3-F46E-4E52-B244-2418DE059494}
 database: master
-path: /sitecore/system/Tasks/Schedules/GoHorseSchedule
-parent: {A705D262-5714-4880-9962-051E25F1416D}
-name: GoHorseSchedule
+path: /sitecore/system/Tasks/Commands/HashTagMonitorCommand
+parent: {3EBEC263-B57E-4A3C-A232-7C70519F9908}
+name: HashTagMonitorCommand
 master: {00000000-0000-0000-0000-000000000000}
-template: {70244923-FA84-477C-8CBD-62F39642C42B}
-templatekey: Schedule
-created: 20180303T041352Z
+template: {58119A3E-560E-4DA6-97C6-1ACE8A5B1219}
+templatekey: Command
+created: 20180303T040930Z
 
 ----field----
-field: {62E64DBB-0A39-4DD7-BA05-7BD08C5404E0}
-name: Command
-key: command
-content-length: 38
+field: {752579A7-EF2F-45B7-B9D1-9B682308B7A5}
+name: Type
+key: type
+content-length: 60
 
-{A37C56E3-F46E-4E52-B244-2418DE059494}
+Sitecore.HashTagMonitor.Api.Task,Sitecore.HashTagMonitor.Api
 ----field----
-field: {B1E16562-F3F9-4DDD-84CA-6E099950ECC0}
-name: Last run
-key: last run
-content-length: 16
+field: {4BC75539-D5C4-487B-AF35-FF13D62BD286}
+name: Method
+key: method
+content-length: 7
 
-20180303T050000Z
+Execute
 ----version----
 language: en
 version: 1
-revision: c5d25d75-5b32-4aad-8962-8995e1c63c59
+revision: c64d1cc1-d90f-48e2-9ac6-c311b8670437
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -42,7 +42,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20180303T041352Z
+20180303T040930Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -56,14 +56,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-c5d25d75-5b32-4aad-8962-8995e1c63c59
+c64d1cc1-d90f-48e2-9ac6-c311b8670437
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20180303T050919Z
+20180303T060826Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
