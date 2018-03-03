@@ -1,9 +1,5 @@
 ﻿using Sitecore.Data.Items;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Sitecore.HashTagMonitor.Api.Managers;
 
 namespace Sitecore.HashTagMonitor.Api
 {
@@ -11,7 +7,9 @@ namespace Sitecore.HashTagMonitor.Api
     {
         public void Execute(Item[] items, Sitecore.Tasks.CommandItem command, Sitecore.Tasks.ScheduleItem schedule)
         {
-            Sitecore.Diagnostics.Log.Info("My Sitecore scheduled task is being run!", this);
+            HashTagManager hashTagManager= new HashTagManager(new Twitter.Twitter());
+
+            hashTagManager.ProcessHashTag("#SCHackathon");
         }
     }
 }

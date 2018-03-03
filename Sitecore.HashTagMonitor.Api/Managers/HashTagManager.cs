@@ -35,8 +35,8 @@ namespace Sitecore.HashTagMonitor.Api.Managers
                     continue;
 
                 // Create Event for tweet (if not created yet)
-                if (!isNewInteraction)
-                    CreateOrGetEvent(hashtag, interaction, tweet);
+                //if (!isNewInteraction)
+                    //CreateOrGetEvent(hashtag, interaction, tweet);
             }
         }
 
@@ -93,11 +93,14 @@ namespace Sitecore.HashTagMonitor.Api.Managers
                     var channelId = Guid.Parse("{6D3D2374-AF56-44FE-B99A-20843B440B58}");
                     var userAgent = hashtag;
                     var newInteraction = new Interaction(contact, InteractionInitiator.Brand, channelId, userAgent);
-                    var newEvent = new Event(Guid.NewGuid(), DateTime.Now)
+                    
+                    var newEvent = new PageViewEvent(tweet.CreatedDate , Guid.NewGuid(),1 , tweet.Language)
                     {
                         DataKey = tweet.IdStr,
-                        Text = tweet.Text
+                        Text = tweet.Text,
+                        Url = "https://twitter.com/intent/retweet?tweet_id=" + tweet.Id
                     };
+
                     newInteraction.Events.Add(newEvent);
                     client.AddInteraction(newInteraction);
                     client.Submit();
