@@ -1,33 +1,40 @@
 ----item----
 version: 1
-id: {A37C56E3-F46E-4E52-B244-2418DE059494}
+id: {539F1533-51A7-4E12-8829-031E0E1822AB}
 database: master
-path: /sitecore/system/Tasks/Commands/GoHorseTweetIntegration
-parent: {3EBEC263-B57E-4A3C-A232-7C70519F9908}
-name: GoHorseTweetIntegration
+path: /sitecore/system/Tasks/Schedules/HashTagMonitor Schedule
+parent: {A705D262-5714-4880-9962-051E25F1416D}
+name: HashTagMonitor Schedule
 master: {00000000-0000-0000-0000-000000000000}
-template: {58119A3E-560E-4DA6-97C6-1ACE8A5B1219}
-templatekey: Command
-created: 20180303T040930Z
+template: {70244923-FA84-477C-8CBD-62F39642C42B}
+templatekey: Schedule
+created: 20180303T041352Z
 
 ----field----
-field: {752579A7-EF2F-45B7-B9D1-9B682308B7A5}
-name: Type
-key: type
-content-length: 32
+field: {62E64DBB-0A39-4DD7-BA05-7BD08C5404E0}
+name: Command
+key: command
+content-length: 38
 
-Sitecore.HashTagMonitor.Api.Task
+{A37C56E3-F46E-4E52-B244-2418DE059494}
 ----field----
-field: {4BC75539-D5C4-487B-AF35-FF13D62BD286}
-name: Method
-key: method
-content-length: 7
+field: {50BE51F8-746D-4DC2-9C3B-B14ABC5CE9B7}
+name: Schedule
+key: schedule
+content-length: 29
 
-Execute
+20180303|99990101|127|0.00:11
+----field----
+field: {B1E16562-F3F9-4DDD-84CA-6E099950ECC0}
+name: Last run
+key: last run
+content-length: 16
+
+20180303T060614Z
 ----version----
 language: en
 version: 1
-revision: 32b4989f-2dcc-4096-85d9-a3abe9a07ceb
+revision: c32bb235-80c0-4ef7-9656-3d2a0289355d
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -42,7 +49,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20180303T040930Z
+20180303T041352Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -56,14 +63,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-32b4989f-2dcc-4096-85d9-a3abe9a07ceb
+c32bb235-80c0-4ef7-9656-3d2a0289355d
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20180303T051051Z
+20180303T060834Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
