@@ -1,22 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using TweetSharp;
 
-namespace GoHorseLib
+namespace Sitecore.HashTagMonitor.Api.Twitter
 {
     public class Twitter
     {
-        public static string _consumerKey = "jTZHoDGisacVsNoEV3tlyH8uF"; // Add your Key
-        public static string _consumerSecret = "SXmCpmA064MyBsSF6Jrb8io4AAjV6HraYYHpopmz9w1FVdq3Sh"; // Add your Key
-        public static string _accessToken = "845015154790223872-oEkmRQMlW3YLObMeGgmPX1JjXoEAN4W"; // Add your Key
-        public static string _accessTokenSecret = "E1j98jiZ0sOUwVassZxTUCOSgVcsTtWsBy1H6oJRucxAG"; // Add your Key
+        public static string ConsumerKey = "jTZHoDGisacVsNoEV3tlyH8uF"; // Add your Key
+        public static string ConsumerSecret = "SXmCpmA064MyBsSF6Jrb8io4AAjV6HraYYHpopmz9w1FVdq3Sh"; // Add your Key
+        public static string AccessToken = "845015154790223872-oEkmRQMlW3YLObMeGgmPX1JjXoEAN4W"; // Add your Key
+        public static string AccessTokenSecret = "E1j98jiZ0sOUwVassZxTUCOSgVcsTtWsBy1H6oJRucxAG"; // Add your Key
         public List<TwitterStatus> GetTweets(string hashtag, TwitterSearchResultType twitterSearchResultType, int count )
         {
-            TwitterService twitterService = new TwitterService(_consumerKey, _consumerSecret);
-            twitterService.AuthenticateWith(_accessToken, _accessTokenSecret);
+            TwitterService twitterService = new TwitterService(ConsumerKey, ConsumerSecret);
+            twitterService.AuthenticateWith(AccessToken, AccessTokenSecret);
 
             int tweetcount = 1;
             //var tweets_search = twitterService.Search(new SearchOptions { Q = "#SCHackathon",Resulttype = TwitterSearchResultType.Popular, Count = 100 });
