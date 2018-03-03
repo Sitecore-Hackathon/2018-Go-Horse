@@ -5,11 +5,17 @@ namespace Sitecore.HashTagMonitor.Api
 {
     public class Task
     {
-        public void Execute(Item[] items, Sitecore.Tasks.CommandItem command, Sitecore.Tasks.ScheduleItem schedule)
+        private readonly HashTagManager _hashTagManager;
+        public Task() : this(new HashTagManager(new Twitter.Twitter())) { }
+        public Task(HashTagManager hashTagManager)
         {
-            HashTagManager hashTagManager= new HashTagManager(new Twitter.Twitter());
+            _hashTagManager = hashTagManager;
+        }
 
-            hashTagManager.ProcessHashTag("#SCHackathon");
+
+        public void Execute(Item[] items, Tasks.CommandItem command, Tasks.ScheduleItem schedule)
+        {
+            _hashTagManager.ProcessAllHashTags();
         }
     }
 }

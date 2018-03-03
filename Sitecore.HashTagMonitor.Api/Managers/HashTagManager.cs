@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using Sitecore.Data;
+using Sitecore.Data.Items;
+using Sitecore.HashTagMonitor.Api.Templates;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Client;
 using Sitecore.XConnect.Collection.Model;
@@ -11,12 +15,73 @@ namespace Sitecore.HashTagMonitor.Api.Managers
     {
         private readonly Twitter.Twitter _twitter;
 
+        #region Config Settings
+        private const string SettingRepositoryPathParam = "HashTagMonitor.RepositoryPath";
+        private const string DatabaseParam = "HashTagMonitor.Database";
+        private string RepositoryPath =>
+            Configuration.Settings.GetSetting(SettingRepositoryPathParam, "/sitecore/system/Modules/HashTagMonitor");
+        private string DatabaseName => Configuration.Settings.GetSetting(SettingRepositoryPathParam, "master");
+
+        private Database _database;
+        private Database Database
+        {
+            get
+            {
+                if (_database != null)
+                    return _database;
+                _database = Database.GetDatabase(DatabaseName) ?? Context.Database;
+                return _database;
+            }
+        }
+
+        private Item _repositoryItem;
+        private Item RepositoryItem
+        {
+            get
+            {
+                if (_repositoryItem != null)
+                    return _repositoryItem;
+                var repositoryItem = Database.GetItem(RepositoryPath);
+                if (repositoryItem != null)
+                {
+                    _repositoryItem = repositoryItem;
+                    return repositoryItem;
+                }
+                Diagnostics.Log.Error($"[HashTagMonitor] Cannot find repository item '{RepositoryPath}'", this);
+                return null;
+            }
+        }
+        #endregion
+
         public HashTagManager(Twitter.Twitter twitter)
         {
             _twitter = twitter;
         }
 
-        public void ProcessHashTag(string hashtag)
+        public void ProcessAllHashTags()
+        {
+            if (RepositoryItem == null)
+                return;
+
+            // Get all HashTags
+            var hashTagsQuery = RepositoryItem.Axes.GetDescendants()
+                .Where(p => p.TemplateID == HashTag.TemplateID);
+            var hashTags = hashTagsQuery as Item[] ?? hashTagsQuery.ToArray();
+            if (!hashTags.Any())
+                return;
+
+            // Process all HashTags
+            foreach (var hashTag in hashTags.Select(p => new HashTag(p)))
+            {
+                var hashTagText = hashTag.Hashtag;
+                if (!hashTagText.StartsWith("#"))
+                    hashTagText = "#" + hashTagText;
+
+                ProcessHashTag(hashTagText, hashTag.PatternCard);
+            }
+        }
+
+        public void ProcessHashTag(string hashtag, PatternCard patternCard)
         {
             // Get all tweets from hashtag
             var tweets = _twitter.GetTweets(hashtag, TwitterSearchResultType.Recent, 200);
@@ -34,46 +99,46 @@ namespace Sitecore.HashTagMonitor.Api.Managers
                 if (interaction == null)
                     continue;
 
-                // Create Event for tweet (if not created yet)
-                //if (!isNewInteraction)
-                    //CreateOrGetEvent(hashtag, interaction, tweet);
+                // Apply Pattern Card to the Contact if the Interaction is new
+                if (isNewInteraction && patternCard != null)
+                    ApplyPatternCard(contact, patternCard);
             }
         }
 
-        private Event CreateOrGetEvent(string hashtag, Interaction interaction, TwitterStatus tweet)
+        private void ApplyPatternCard(Contact contact, PatternCard patternCard)
         {
-            // Get Event if it does exists
-            var tweetEvent = interaction.Events.FirstOrDefault(p=>p.DataKey==tweet.IdStr);
-            if (tweetEvent != null)
-                return tweetEvent;
-
-            // Create event if does not exists
-            using (XConnectClient client = XConnect.Client.Configuration.SitecoreXConnectClientConfiguration.GetClient())
+            using (var client = XConnect.Client.Configuration.SitecoreXConnectClientConfiguration.GetClient())
             {
                 try
                 {
-                    var newEvent = new Event(Guid.NewGuid(), DateTime.Now)
-                    {
-                        DataKey = tweet.IdStr,
-                        Text = tweet.Text
-                    };
+                    // Retrieve facet by name
+                    var facet = contact.GetFacet<ContactBehaviorProfile>(ContactBehaviorProfile.DefaultFacetKey) ??
+                                new ContactBehaviorProfile();
 
-                    interaction.Events.Add(newEvent);
-                    client.AddInteraction(interaction);
+                    // Change facet properties
+                    var score = new ProfileScore {
+                        ProfileDefinitionId = patternCard.GetProfile().ID.ToGuid()
+                    };
+                    if (score.Values==null)
+                        score.Values = new Dictionary<Guid, double>();
+
+                    var patterns = patternCard.GetPatterns();
+                    foreach (var pair in patterns)
+                        score.Values.Add(pair.Key, pair.Value);
+
+                    // Set the updated facet
+                    client.SetFacet(contact, ContactBehaviorProfile.DefaultFacetKey, facet);
                     client.Submit();
-                    return CreateOrGetEvent(hashtag, interaction, tweet);
                 }
                 catch (XdbExecutionException ex)
                 {
-                    // Manage exception
                     Diagnostics.Log.Error(
-                        $"[HashTagMonitor] Error creating or retrieving interaction for interaction id '{interaction.Id}' with hashtag '{hashtag}'",
+                        $"[HashTagMonitor] Error applying Patter Card to Contact '{contact.Personal().Nickname}'",
                         ex, GetType());
-                    return null;
                 }
             }
         }
-
+        
         private Interaction CreateOrGetInteraction(string hashtag, Contact contact, TwitterStatus tweet, out bool isNewInteraction)
         {
             // Get interaction if it does exists
@@ -84,7 +149,7 @@ namespace Sitecore.HashTagMonitor.Api.Managers
 
             // Create if does not exists
             isNewInteraction = true;
-            using (XConnectClient client = XConnect.Client.Configuration.SitecoreXConnectClientConfiguration.GetClient())
+            using (var client = XConnect.Client.Configuration.SitecoreXConnectClientConfiguration.GetClient())
             {
                 try
                 {
@@ -94,16 +159,20 @@ namespace Sitecore.HashTagMonitor.Api.Managers
                     var userAgent = hashtag;
                     var newInteraction = new Interaction(contact, InteractionInitiator.Brand, channelId, userAgent);
                     
-                    var newEvent = new PageViewEvent(tweet.CreatedDate , Guid.NewGuid(),1 , tweet.Language)
+                    var newEvent = new Event(Guid.NewGuid(),tweet.CreatedDate)
                     {
                         DataKey = tweet.IdStr,
-                        Text = tweet.Text,
-                        Url = "https://twitter.com/intent/retweet?tweet_id=" + tweet.Id
+                        Text = tweet.Text
+                        //Url = "https://twitter.com/intent/retweet?tweet_id=" + tweet.Id
                     };
 
                     newInteraction.Events.Add(newEvent);
                     client.AddInteraction(newInteraction);
                     client.Submit();
+
+                    // Has to get Contact back from xConnect
+                    contact = CreateOrGetContact(hashtag, tweet);
+
                     return newInteraction;
                 }
                 catch (XdbExecutionException ex)
@@ -119,7 +188,7 @@ namespace Sitecore.HashTagMonitor.Api.Managers
 
         private Contact CreateOrGetContact(string hashtag, TwitterStatus tweet)
         {
-            using (XConnectClient client = XConnect.Client.Configuration.SitecoreXConnectClientConfiguration.GetClient())
+            using (var client = XConnect.Client.Configuration.SitecoreXConnectClientConfiguration.GetClient())
             {
                 try
                 {
