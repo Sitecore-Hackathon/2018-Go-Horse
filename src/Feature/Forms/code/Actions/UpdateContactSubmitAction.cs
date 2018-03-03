@@ -48,8 +48,8 @@ namespace GoHorse.Feature.Forms.Actions
                 try
                 {
                     var source = "VisitUs.Form";
-                    var id = CurrentTracker.Contact.ContactId.ToString("N");
-                    CurrentTracker.Session.IdentifyAs(source, id);
+                    var id = Sitecore.Analytics.Tracker.Current.Session.Contact.ContactId.ToString("N");
+                    //CurrentTracker.Session.IdentifyAs(source, id);
                     var trackerIdentifier = new IdentifiedContactReference(source, id);
                     var expandOptions = new ContactExpandOptions(
                         CollectionModel.FacetKeys.PersonalInformation,
