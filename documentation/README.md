@@ -35,16 +35,18 @@ The image below show the configured HashTag
 /sitecore/system/Modules/HashTagMonitor/Test/SCHackathon
 ![HashTag](images/configurehashtag.png?raw=true "Configure HashTag")
 
-You can embed images of different formats too:
-The image below, shows all the Contacts created after the Task was runned
-![Contacts](images/contacts.png?raw=true "Contacts")
-
+After the HashTag is defined , The user can Run the Task Scheduler in order to import all the tweets into the xDB, 
 The image below the scheduler configured to be executed every 5 minutes
 ![Task Scheduler](images/taskscheduler.png?raw=true "Task Scheduler")
 
-The image below demonstrates how to Force the Task to be run
-![Task Scheduler](images/powershellforcetask.png?raw=true "Powershell Task")
+If you can't wait, Force the importation procedure by Firing the following url
+http://myur/api/sitecore/hash/Process
 
+After you run the Process , Go to your "Experience Profile" and check the List of Contacts 
+The image below, shows all the Contacts created after the Task was runned
+![Contacts](images/contacts.png?raw=true "Contacts")
+
+Acessing the Website :
 The image below demonstrates the website
 ![Visit Us](images/VisitUs.png?raw=true "Visit Us")
 
