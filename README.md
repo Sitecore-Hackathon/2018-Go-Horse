@@ -9,7 +9,7 @@ Members:
 
 This is our submission for the 2018 Hackathon in the xConnect category.
 
-Full documentation with installation steps, configuration and etc is available [here](https://github.com/Sitecore-Hackathon/2018-Go-Horse/tree/master/documentation) 
+Full documentation with installation steps, configuration and etc. is available [here](https://github.com/Sitecore-Hackathon/2018-Go-Horse/tree/master/documentation).
 
 
 ## Category
