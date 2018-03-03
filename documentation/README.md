@@ -9,8 +9,11 @@ Identify personas and fire goals based on a twitter HashTag
 
 ## Detailed description
 The Module automatically tracks all tweets for a specified #hashtag and identify accounts that interact with it and import them to xDB. 
+
 This module helps marketers to identify the profile of each user along with their engagement with the #hashtag, 
-e.g. if someone tweets on #SCHackthon, his informations are imported into xDB. Later, when he visits the website and fills in a VisitUs Form, then we can match the user to a given persona and show personalized content.
+e.g. if someone tweets on #SCHackthon, his informations are imported into xDB. Later, when he visits the website and fills in a Visit Us Form, then we can match the user to a given persona and show personalized content.
+
+With this module marketers will be able to automate the interation with #hashtags on Twitter and use it in their engagement plans.
 
 ## Pre-requisites
 - Sitecore 9 Update-1
