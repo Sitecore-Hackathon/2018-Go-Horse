@@ -6,7 +6,7 @@
 2.2 Anaylze
 ![analyze step](images/analyze.png?raw=true "analyze step")
 2.3 Install
-![Install Package](images/installpackage.png.png?raw=true "Install Package")
+![Install Package](images/installpackage.png?raw=true "Install Package")
 2.4 Processing instalation
 ![Install Package](images/processing.png?raw=true "Install Package")
 
