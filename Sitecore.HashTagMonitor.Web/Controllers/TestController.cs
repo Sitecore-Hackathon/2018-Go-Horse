@@ -34,6 +34,24 @@ namespace Sitecore.HashTagMonitor.Web.Controllers
         }
 
         [HttpGet]
+        public ActionResult GetContact()
+        {
+            using (XConnectClient client = XConnect.Client.Configuration.SitecoreXConnectClientConfiguration.GetClient())
+            {
+                var contactReference = new IdentifiedContactReference("twitter", "longhorntaco");
+                var contact = client.Get(contactReference, new ExpandOptions() { FacetKeys = { "Personal" } });
+
+                if (contact != null)
+                {
+                    Console.WriteLine($"{contact.Personal().FirstName} {contact.Personal().LastName}");
+                }
+            }
+
+            return null;
+        }
+
+
+        [HttpGet]
         public ActionResult AddContact()
         {
             using (XConnectClient client = XConnect.Client.Configuration.SitecoreXConnectClientConfiguration.GetClient())
