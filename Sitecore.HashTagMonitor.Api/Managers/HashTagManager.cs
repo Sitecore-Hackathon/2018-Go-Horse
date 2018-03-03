@@ -101,19 +101,30 @@ namespace Sitecore.HashTagMonitor.Api.Managers
 
                 // Apply Pattern Card to the Contact if the Interaction is new
                 if (isNewInteraction && patternCard != null)
-                    ApplyPatternCard(contact, patternCard);
+                    ApplyPatternCard(contact, tweet, patternCard);
             }
         }
 
-        private void ApplyPatternCard(Contact contact, PatternCard patternCard)
+        private void ApplyPatternCard(Contact contact, TwitterStatus tweet, PatternCard patternCard)
         {
             using (var client = XConnect.Client.Configuration.SitecoreXConnectClientConfiguration.GetClient())
             {
                 try
                 {
-                    // Retrieve facet by name
-                    var facet = contact.GetFacet<ContactBehaviorProfile>(ContactBehaviorProfile.DefaultFacetKey) ??
-                                new ContactBehaviorProfile();
+                    // Get updated contact with ContactBehaviorProfile facet
+                    var updatedContact = client.Get(new IdentifiedContactReference("twitter", tweet.User.ScreenName),
+                        new ContactExpandOptions(ContactBehaviorProfile.DefaultFacetKey));
+                    if (updatedContact == null)
+                        return;
+
+                    // Retrieve facet or create new
+                    var isNewFacet = false;
+                    var facet =
+                        updatedContact.GetFacet<ContactBehaviorProfile>(ContactBehaviorProfile.DefaultFacetKey);
+                    if (facet == null) {
+                        isNewFacet = true;
+                        facet = new ContactBehaviorProfile();
+                    }
 
                     // Change facet properties
                     var score = new ProfileScore {
@@ -121,14 +132,21 @@ namespace Sitecore.HashTagMonitor.Api.Managers
                     };
                     if (score.Values==null)
                         score.Values = new Dictionary<Guid, double>();
-
                     var patterns = patternCard.GetPatterns();
                     foreach (var pair in patterns)
                         score.Values.Add(pair.Key, pair.Value);
-                    facet.Scores.Add(patternCard.GetProfile().ID.Guid, score);
 
-                    // Set the updated facet
-                    client.SetFacet(contact, ContactBehaviorProfile.DefaultFacetKey, facet);
+                    if (facet.Scores.ContainsKey(patternCard.GetProfile().ID.Guid))
+                        facet.Scores[patternCard.GetProfile().ID.Guid] = score;
+                    else
+                        facet.Scores.Add(patternCard.GetProfile().ID.Guid, score);
+
+                    // Save the facet
+                    if (isNewFacet)
+                        client.SetFacet<ContactBehaviorProfile>(updatedContact, ContactBehaviorProfile.DefaultFacetKey, facet);
+                    else
+                        client.SetFacet(updatedContact, ContactBehaviorProfile.DefaultFacetKey, facet);
+
                     client.Submit();
                 }
                 catch (XdbExecutionException ex)
@@ -196,7 +214,7 @@ namespace Sitecore.HashTagMonitor.Api.Managers
                     {
                         DataKey = tweet.IdStr,
                         Text = tweet.Text,
-                        Url = "https://twitter.com/intent/retweet?tweet_id=" + tweet.Id
+                        Url = "https://twitter.com/statuses/" + tweet.IdStr
                     };
 
                     interaction.Events.Add(newEvent);
