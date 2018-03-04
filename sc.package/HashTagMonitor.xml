@@ -21,11 +21,22 @@
         <x-item>/App_Config/Include/Sitecore.HashTagMonitor.config</x-item>
         <x-item>/bin/Sitecore.HashTagMonitor.Api.dll</x-item>
         <x-item>/bin/Sitecore.HashTagMonitor.Web.dll</x-item>
+        <x-item>/bin/Hammock.dll</x-item>
+        <x-item>/bin/TweetSharp.dll</x-item>
       </Entries>
       <Converter>
         <FileToEntryConverter>
           <Root>/</Root>
-          <Transforms />
+          <Transforms>
+            <InstallerConfigurationTransform>
+              <Options>
+                <BehaviourOptions>
+                  <ItemMode>Undefined</ItemMode>
+                  <ItemMergeMode>Undefined</ItemMergeMode>
+                </BehaviourOptions>
+              </Options>
+            </InstallerConfigurationTransform>
+          </Transforms>
         </FileToEntryConverter>
       </Converter>
       <Include />
