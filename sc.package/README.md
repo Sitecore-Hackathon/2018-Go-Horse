@@ -1,4 +1,12 @@
 # Package
-Please include a .zip or .update file which will allow the module to be installed into a clean version of Sitecore.
 
-If there are any post-install steps required then please include it in the documentation. Remember, packages can include files and DLLs using the *Files dynamically* or *Files statically* option in the **Package Designer**.
+1. Use the Sitecore Installation wizard to install the [Sitecore HashTagMonitor module](https://github.com/Sitecore-Hackathon/2018-Go-Horse/blob/master/sc.package/HashTagMonitor-1.0.zip)
+2. Use the Sitecore Update Installation Wizard Page using the following url: http://sitecorewebiste/sitecore/admin/UpdateInstallationWizard.aspx to install the [GoHorse website Sample](https://github.com/Sitecore-Hackathon/2018-Go-Horse/blob/master/sc.package/GoHorse_Sample_Site.update)
+3. The Update has some steps 
+4. Anaylze
+![analyze step](images/analyze.png?raw=true "analyze step")
+5. Install
+![Install Package](images/installpackage.png?raw=true "Install Package")
+6. Processing instalation
+![Install Package](images/processing.png?raw=true "Install Package")
+
