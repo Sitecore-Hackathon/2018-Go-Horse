@@ -21,7 +21,7 @@ namespace Sitecore.HashTagMonitor.Api.Managers
         private const string DatabaseParam = "HashTagMonitor.Database";
         private string RepositoryPath =>
             Configuration.Settings.GetSetting(SettingRepositoryPathParam, "/sitecore/system/Modules/HashTagMonitor");
-        private string DatabaseName => Configuration.Settings.GetSetting(SettingRepositoryPathParam, "master");
+        private string DatabaseName => Configuration.Settings.GetSetting(DatabaseParam, "master");
 
         private Database _database;
         private Database Database
